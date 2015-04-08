@@ -54,7 +54,7 @@ public class ChooseLibFragment extends Fragment implements View.OnClickListener 
             }
         };
 
-        (rootView.findViewById(R.id.bird)).setOnClickListener(this);
+        (rootView.findViewById(R.id.bird)).setOnClickListener(onClickListener);
         (rootView.findViewById(R.id.carnegie)).setOnClickListener(onClickListener);
         (rootView.findViewById(R.id.geology)).setOnClickListener(onClickListener);
         (rootView.findViewById(R.id.law)).setOnClickListener(onClickListener);

@@ -195,7 +195,7 @@ public class CoverPageActivity extends ActionBarActivity
 
             case R.id.bird:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new LibBirdO())
+                        .replace(R.id.container, new LibBird())
                         .addToBackStack("Bird Library")
                         .commit();
                 break;
