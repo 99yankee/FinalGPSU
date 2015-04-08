@@ -22,9 +22,8 @@
         android:text="BusTracker Beta"
         android:id="@+id/selectRoute"
         android:onClick="launchSelectRoute"
-        android:layout_above="@+id/button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/routeMap"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="fill_parent"
@@ -55,8 +54,7 @@
         android:text="Bus Schedules"
         android:onClick="launchSchedules"
         android:id="@+id/schedules"
-        android:layout_above="@+id/selectRoute"
-        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/button"
         android:layout_alignParentStart="true" />
 
 </RelativeLayout>
