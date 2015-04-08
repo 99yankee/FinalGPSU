@@ -56,6 +56,31 @@
             android:name=".Directions"
             android:label="@string/title_activity_diretions" >
         </activity>
+        <activity
+            android:name=".SelectRoute"
+            android:label="title_activity_select_route"
+            android:parentActivityName=".BusActivity" >
+        </activity>
+        <activity
+            android:name=".CampusDirection"
+            android:label="title_activity_campus_direction"
+            android:parentActivityName=".SelectRoute" >
+        </activity>
+        <activity
+            android:name=".SelectStop"
+            android:label="title_activity_select_stop"
+            android:parentActivityName=".CampusDirection" >
+        </activity>
+        <activity
+            android:name=".stopInfo"
+            android:label="title_activity_stop_info"
+            android:parentActivityName=".SelectStop" >
+        </activity>
+        <activity
+            android:name=".RouteMap"
+            android:label="title_activity_route_map"
+            android:parentActivityName=".BusActivity" >
+        </activity>
     </application>
 
 </manifest>
