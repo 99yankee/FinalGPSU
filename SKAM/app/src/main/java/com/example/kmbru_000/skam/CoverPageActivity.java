@@ -2,6 +2,9 @@ package com.example.kmbru_000.skam;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -17,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 
 //import android.support.v7.widget.LinearLayoutManager;
@@ -39,6 +43,7 @@ public class CoverPageActivity extends ActionBarActivity
     private CharSequence mTitle;
     private String[] mPlanetTitles;
 
+    public Button buttonred;
 
     //
     @Override
@@ -80,6 +85,7 @@ public class CoverPageActivity extends ActionBarActivity
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
+        buttonred = (Button) findViewById(R.id.mapbutton);
         if (savedInstanceState == null) {
             selectItem(0);
         }
@@ -114,7 +120,7 @@ public class CoverPageActivity extends ActionBarActivity
             case 3: // Border Line
 
                 break;
-            case 4:  // Change Theme
+            case 4:  // Cafes
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new CoverPageFragment())
                         .commit();
@@ -131,7 +137,7 @@ public class CoverPageActivity extends ActionBarActivity
         }
     }
 
-        @Override
+    @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         // Sync the toggle state after onRestoreInstanceState has occurred.
@@ -195,6 +201,7 @@ public class CoverPageActivity extends ActionBarActivity
 
             case R.id.bird:
                 getSupportFragmentManager().beginTransaction()
+                        //.setCustomAnimations(R.anim.slide_in_from_left, R.anim.slide_out_to_bottom)
                         .replace(R.id.container, new LibBird())
                         .addToBackStack("Bird Library")
                         .commit();
@@ -236,6 +243,7 @@ public class CoverPageActivity extends ActionBarActivity
                         .addToBackStack("Moon Library (ESF)")
                         .commit();
                 break;
+
             default:
                 break;
         }
