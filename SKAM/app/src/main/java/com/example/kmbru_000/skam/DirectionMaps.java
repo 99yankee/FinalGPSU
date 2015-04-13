@@ -52,13 +52,19 @@ public class DirectionMaps extends FragmentActivity {
         LocationManager locationManager =(LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Criteria criteria = new Criteria();
         String provider = locationManager.getBestProvider(criteria, true);
+        try {
+            myLocation = locationManager.getLastKnownLocation(provider);
+            current = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
 
-        myLocation = locationManager.getLastKnownLocation(provider);
-        current = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
-
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current,
-                16));
-        addMarkers();
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current,
+                    16));
+            addMarkers();
+        }
+        catch (NullPointerException e){
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(43.038051, -76.130717),
+                    16));
+            addMarkers();
+        }
 
     }
 
