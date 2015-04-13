@@ -41,6 +41,7 @@
             android:layout_alignParentStart="true"
             android:id="@+id/linearLayout"
             android:weightSum="2"
+            android:layout_marginTop="4dp"
             android:divider="#d0000066"
             android:dividerPadding="2dp">
 
@@ -50,7 +51,9 @@
                 android:text="Ernie Davis"
                 android:id="@+id/ernie"
                 android:layout_alignParentStart="true"
-                android:layout_weight="1"
+                android:layout_weight=".95"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/button_shaded"
                 />
 
             <Button
@@ -59,7 +62,9 @@
                 android:text="Brockway"
                 android:id="@+id/brockway"
                 android:layout_alignEnd="@+id/imageView2"
-                android:layout_weight="1"/>
+                android:layout_weight=".95"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/button_shaded"/>
 
         </LinearLayout>
 
@@ -69,6 +74,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/linearlayout2"
             android:weightSum="3"
+            android:layout_marginTop="4dp"
             android:layout_below="@+id/linearLayout"
             android:layout_alignParentStart="true">
             <Button
@@ -76,7 +82,9 @@
                 android:layout_height="wrap_content"
                 android:text="Goldstein"
                 android:id="@+id/goldstein"
-                android:layout_weight="1.5"/>
+                android:layout_weight="1.45"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/button_shaded"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -84,7 +92,9 @@
                 android:text="Graham"
                 android:id="@+id/graham"
                 android:layout_alignParentEnd="true"
-                android:layout_weight="1.5"/>
+                android:layout_weight="1.45"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/button_shaded"/>
         </LinearLayout>
 
         <LinearLayout
@@ -92,6 +102,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:weightSum="3"
+            android:layout_marginTop="4dp"
             android:id="@+id/linearlayout3"
             android:layout_below="@+id/linearlayout2"
             android:layout_alignParentStart="true">
@@ -102,7 +113,9 @@
                 android:id="@+id/sadler"
                 android:layout_alignParentBottom="true"
                 android:layout_alignEnd="@+id/goldstein"
-                android:layout_weight="1.1"/>
+                android:layout_weight="1.45"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/button_shaded"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -111,10 +124,10 @@
                 android:id="@+id/shaw"
                 android:layout_alignBottom="@+id/sadler"
                 android:layout_alignStart="@+id/graham"
-                android:layout_weight="1.9"/>
+                android:layout_weight="1.45"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/button_shaded"/>
         </LinearLayout>
-
-
 
     </LinearLayout>
 
@@ -124,7 +137,7 @@
         android:id="@+id/imageView2"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/halloflanguages"
+        android:src="@drawable/sadler"
         android:layout_weight="1"
         android:scaleType="fitXY"
         />

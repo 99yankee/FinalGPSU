@@ -355,4 +355,124 @@ public class CoverPageActivity extends ActionBarActivity
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
+
+    public void directBird (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "BirdLibrarySyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
+
+    public void directCarnegie (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "CarnegieLibrarySyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
+
+    public void directHeroy (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "HeroyGeologyBuildingSyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
+
+    public void directLaw (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "HDouglasBarclayLawLibrarySyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
+
+    public void directMLK (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "MartinLutherKingJRLibrarySyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
+
+    public void directMoon (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "MoonLibrarySyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
+
+    public void directBrockway (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "BrockwayHallSyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
+
+    public void directErnie (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "ErnieHallSyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
+
+    public void directGoldstein (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "GoldsteinStudentCenterSyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
+
+    public void directGram (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "GramDiningHallSyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
+
+    public void directSadler (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "SadlerDiningHallSyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
+
+    public void directShaw (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "ShawDiningHallSyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
 }
