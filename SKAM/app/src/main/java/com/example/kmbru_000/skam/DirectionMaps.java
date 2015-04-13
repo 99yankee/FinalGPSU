@@ -81,7 +81,7 @@ public class DirectionMaps extends FragmentActivity {
         String output = "json";
         String url = "https://maps.googleapis.com/maps/api/directions/"
                 + output + "?" + params;
-        String origin ="LifeSciencesComplexSyracuse";
+        /*String origin ="LifeSciencesComplexSyracuse";
         origin = intent.getStringExtra(Directions.START).replaceAll("\\s", "");
         if(origin.toLowerCase().equals("currentlocation")) {
             origin = myLocation.getLatitude() + "," + myLocation.getLongitude();
@@ -91,19 +91,27 @@ public class DirectionMaps extends FragmentActivity {
         }
         String destianation ="LinkSyracuse";
         destianation = intent.getStringExtra(Directions.DESTINATION).replaceAll("\\s", "");
-        if(destianation.toLowerCase().substring(0,11).equals("lifesciences")){
+       / if(destianation.toLowerCase().substring(0,11).equals("lifesciences")){
             destianation="LifeSciencesComplexSyracuse";
         }
+
         String waypoint = "";
         url = "https://maps.googleapis.com/maps/api/directions/json?origin="+origin+"&destination="+destianation+"&waypoints="+waypoint+"&mode=walking";
         System.out.println(url);
+        */
         return url;
     }
 
     private void addMarkers() {
         if (googleMap != null) {
-            googleMap.addMarker(new MarkerOptions().position(current)
-                    .title("First Point"));
+            try {
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(43.038051, -76.130717))
+                        .title("First Point"));
+            }
+            catch(NullPointerException e){
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(43.038051, -76.130717))
+                        .title("First Point"));
+            }
         }
     }
 
