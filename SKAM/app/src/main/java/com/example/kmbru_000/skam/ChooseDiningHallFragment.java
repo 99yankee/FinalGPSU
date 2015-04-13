@@ -3,7 +3,7 @@ package com.example.kmbru_000.skam;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +12,12 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ChooseDiningHallFragment.OnFragmentInteractionListener} interface
+ * {@link com.example.kmbru_000.skam.ChooseDiningHallFragment.OnButtonSelectedListener} interface
  * to handle interaction events.
  * Use the {@link ChooseDiningHallFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ChooseDiningHallFragment extends Fragment {
+public class ChooseDiningHallFragment extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -27,7 +27,7 @@ public class ChooseDiningHallFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
+    private OnButtonSelectedListener mListener;
 
     /**
      * Use this factory method to create a new instance of
@@ -64,24 +64,41 @@ public class ChooseDiningHallFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_choose_dining_hall, container, false);
+        View rootView= inflater.inflate(R.layout.fragment_choose_dining_hall, container, false);
+        View.OnClickListener onClickListener = new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int id = view.getId();
+                mListener.onButtonItemSelected(id);
+
+            }
+        };
+
+        (rootView.findViewById(R.id.brockway)).setOnClickListener(onClickListener);
+        (rootView.findViewById(R.id.ernie)).setOnClickListener(onClickListener);
+        (rootView.findViewById(R.id.goldstein)).setOnClickListener(onClickListener);
+        (rootView.findViewById(R.id.graham)).setOnClickListener(onClickListener);
+        (rootView.findViewById(R.id.sadler)).setOnClickListener(onClickListener);
+        (rootView.findViewById(R.id.shaw)).setOnClickListener(onClickListener);
+
+        View.OnClickListener handler = new View.OnClickListener(){
+            public void onClick(View v) {
+            }
+        };
+
+        return rootView;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
+
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            mListener = (OnFragmentInteractionListener) activity;
+            mListener = (OnButtonSelectedListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement OnButtonSelectedListener");
         }
     }
 
@@ -101,9 +118,15 @@ public class ChooseDiningHallFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
+
+
+    @Override
+    public void onClick(View view) {
+
+    }
+
+    public interface OnButtonSelectedListener {
+        public void onButtonItemSelected(int position);
     }
 
 }

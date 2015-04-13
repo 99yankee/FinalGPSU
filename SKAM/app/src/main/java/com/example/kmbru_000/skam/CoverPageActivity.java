@@ -30,7 +30,12 @@ public class CoverPageActivity extends ActionBarActivity
         implements CoverPageFragment.OnButtonSelectedListener, ChooseLibFragment.OnButtonSelectedListener,
         LibCarnegie.OnFragmentInteractionListener, LibLaw.OnFragmentInteractionListener,
         LibMlk.OnFragmentInteractionListener, LibMoon.OnFragmentInteractionListener,
-        LibArch.OnFragmentInteractionListener, LibBird.OnFragmentInteractionListener{
+        LibArch.OnFragmentInteractionListener, LibBird.OnFragmentInteractionListener,
+        ChooseDiningHallFragment.OnButtonSelectedListener,
+        dining_brockway.OnFragmentInteractionListener,
+        dining_ernie.OnFragmentInteractionListener, dining_goldstein.OnFragmentInteractionListener,
+        dining_graham.OnFragmentInteractionListener, dining_sadler.OnFragmentInteractionListener,
+        dining_shaw.OnFragmentInteractionListener {
 
     private RelativeLayout mDrawer;
     private DrawerLayout mDrawerLayout;
@@ -113,7 +118,7 @@ public class CoverPageActivity extends ActionBarActivity
 
             case 2: //Dining Halls
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new CoverPageFragment())
+                        .replace(R.id.container, new ChooseDiningHallFragment())
                         .addToBackStack("Dining")
                         .commit();
                 break;
@@ -244,6 +249,48 @@ public class CoverPageActivity extends ActionBarActivity
                         .commit();
                 break;
 
+            case R.id.brockway:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new dining_brockway())
+                        .addToBackStack("Brockway Dining Hall")
+                        .commit();
+                break;
+
+            case R.id.ernie:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new dining_ernie())
+                        .addToBackStack("Ernie Davis Dining Hall")
+                        .commit();
+                break;
+
+            case R.id.goldstein:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new dining_goldstein())
+                        .addToBackStack("Goldstein Student Center")
+                        .commit();
+                break;
+
+            case R.id.graham:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new dining_graham())
+                        .addToBackStack("Graham Dining Hall")
+                        .commit();
+                break;
+
+            case R.id.sadler:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new dining_sadler())
+                        .addToBackStack("Sadler Dining Hall")
+                        .commit();
+                break;
+
+            case R.id.shaw:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new dining_shaw())
+                        .addToBackStack("Shaw Dining Hall")
+                        .commit();
+                break;
+
             default:
                 break;
         }
@@ -297,5 +344,15 @@ public class CoverPageActivity extends ActionBarActivity
 
             return rootView;
         }
+    }
+
+    public void directArch (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "SlocumHallSyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
     }
 }
