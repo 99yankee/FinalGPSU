@@ -298,4 +298,14 @@ public class CoverPageActivity extends ActionBarActivity
             return rootView;
         }
     }
+
+    public void directArch (View view){
+        Intent intent = new Intent(this, DirectionMaps.class);
+        String starting = "lifesciences";
+        intent.putExtra(Directions.START, starting);
+        String destination = "";
+        destination = "SlocumHallSyracuse";
+        intent.putExtra(Directions.DESTINATION, destination);
+        startActivity(intent);
+    }
 }
