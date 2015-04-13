@@ -127,12 +127,12 @@ public class CoverPageActivity extends ActionBarActivity
             case 3: // Border Line
 
                 break;
-            case 4:  // Cafes
+         /*   case 4:  // Cafes
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new CoverPageFragment())
                         .commit();
                 break;
-            case 5: // Exit
+           */ case 4: // Exit
                 System.exit(1);
                 break;
 
