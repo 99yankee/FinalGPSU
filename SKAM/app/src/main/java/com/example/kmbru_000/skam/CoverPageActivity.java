@@ -1,5 +1,7 @@
 package com.example.kmbru_000.skam;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -168,18 +170,48 @@ public class CoverPageActivity extends ActionBarActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        //int id = item.getItemId();
 
+        super .onOptionsItemSelected(item);
         //noinspection SimplifiableIfStatement
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.drawer_layout, PlaceholderFragment.newInstance(id))
-                .commit();
+        //getSupportFragmentManager().beginTransaction()
+          //      .replace(R.id.action_settings, PlaceholderFragment.newInstance(id))
+            //    .commit();
 
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
+        switch (item.getItemId())
+        {
+            case R.id.action_settings:
+                settingsMenuItem();
+                break;
+
+
+
         }
 
-        return super.onOptionsItemSelected(item);
+
+        //if (mDrawerToggle.onOptionsItemSelected(item)) {
+        //    return true;
+        //}
+
+
+
+        return true;
+
+    }
+
+
+    private void settingsMenuItem() {
+        new AlertDialog.Builder(this)
+        .setTitle("About gpSU")
+        .setMessage("gpSU is an app made by Syracuse students, for Syracuse students.  " +
+                "Use it to find information about the campus and make all your hopes and dreams come true!")
+        .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).show();
+
     }
 
     @Override
