@@ -7,14 +7,6 @@
     tools:context="com.example.kmbru_000.skam.BusActivity">
 
 
-    <TextView
-        android:text="Welcome! Please select a route to find a time."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/main"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:layout_width="fill_parent"
         android:textAllCaps="false"
@@ -56,5 +48,22 @@
         android:id="@+id/schedules"
         android:layout_above="@+id/button"
         android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:src="@drawable/busimage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Syracuse Centro Bus"
+        android:id="@+id/textView2"
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
