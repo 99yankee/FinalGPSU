@@ -380,7 +380,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directArch (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "SlocumHallSyracuse";
@@ -390,7 +390,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directBird (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "BirdLibrarySyracuse";
@@ -400,7 +400,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directCarnegie (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "CarnegieLibrarySyracuse";
@@ -410,7 +410,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directHeroy (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "HeroyGeologyBuildingSyracuse";
@@ -420,7 +420,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directLaw (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "HDouglasBarclayLawLibrarySyracuse";
@@ -430,7 +430,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directMLK (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "MartinLutherKingJRLibrarySyracuse";
@@ -440,7 +440,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directMoon (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "MoonLibrarySyracuse";
@@ -450,7 +450,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directBrockway (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "BrockwayHallSyracuse";
@@ -460,7 +460,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directErnie (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "ErnieHallSyracuse";
@@ -470,7 +470,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directGoldstein (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "GoldsteinStudentCenterSyracuse";
@@ -480,7 +480,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directGram (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "GramDiningHallSyracuse";
@@ -490,7 +490,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directSadler (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "SadlerDiningHallSyracuse";
@@ -500,7 +500,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directShaw (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "ShawDiningHallSyracuse";
