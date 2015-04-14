@@ -35,7 +35,8 @@ public class BusActivity extends ActionBarActivity {
     public void launchHelp(View view) {
         for (int i=0; i < 2; i++)
         {
-            Toast.makeText(getApplicationContext(), "Press View Routes Map to find your desired bus route, then use bus schedules or BusTracker to find a time.",
+            Toast.makeText(getApplicationContext(), "Press View Routes Map to find your desired bus route, " +
+                            "then use bus schedules or BusTracker to find a time.",
                     Toast.LENGTH_SHORT).show();
         }
     }
@@ -44,6 +45,14 @@ public class BusActivity extends ActionBarActivity {
         intent.setAction(Intent.ACTION_VIEW);
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
         intent.setData(Uri.parse("http://centro.org/Schedules-Syracuse.aspx"));
+        startActivity(intent);
+    }
+
+    public void launchMap(View view){
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse("http://centro.org/images/System%20Maps/2014-10-20%20Onondaga%20County%20System%20Map.pdf"));
         startActivity(intent);
     }
 

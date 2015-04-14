@@ -39,9 +39,9 @@
         android:textAllCaps="false"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Bus Routes Map"
+        android:text="Bus Routes Map (PDF)"
         android:id="@+id/routeMap"
-        android:onClick="launchRouteMap"
+        android:onClick="launchMap"
         android:layout_above="@+id/schedules"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
