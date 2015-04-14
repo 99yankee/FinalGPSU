@@ -1,8 +1,5 @@
 package com.example.kmbru_000.skam;
 
-import com.google.android.gms.maps.model.LatLng;
-
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,8 +12,8 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class PathJSONParser {
 
-    public List parse(JSONObject jObject) {
-        List routes = new ArrayList();
+    public List<List<HashMap<String, String>>> parse(JSONObject jObject) {
+        List<List<HashMap<String, String>>> routes = new ArrayList<List<HashMap<String, String>>>();
         JSONArray jRoutes = null;
         JSONArray jLegs = null;
         JSONArray jSteps = null;
@@ -25,7 +22,7 @@ public class PathJSONParser {
             /** Traversing all routes */
             for (int i = 0; i < jRoutes.length(); i++) {
                 jLegs = ((JSONObject) jRoutes.get(i)).getJSONArray("legs");
-                List path = new ArrayList();
+                List<HashMap<String, String>> path = new ArrayList<HashMap<String, String>>();
 
                 /** Traversing all legs */
                 for (int j = 0; j < jLegs.length(); j++) {
@@ -36,11 +33,11 @@ public class PathJSONParser {
                         String polyline = "";
                         polyline = (String) ((JSONObject) ((JSONObject) jSteps
                                 .get(k)).get("polyline")).get("points");
-                        List list = decodePoly(polyline);
+                        List<LatLng> list = decodePoly(polyline);
 
                         /** Traversing all points */
                         for (int l = 0; l < list.size(); l++) {
-                            HashMap hm = new HashMap();
+                            HashMap<String, String> hm = new HashMap<String, String>();
                             hm.put("lat",
                                     Double.toString(((LatLng) list.get(l)).latitude));
                             hm.put("lng",
@@ -63,10 +60,10 @@ public class PathJSONParser {
      * Method Courtesy :
      * jeffreysambells.com/2010/05/27
      * /decoding-polylines-from-google-maps-direction-api-with-java
-     */
-    private List decodePoly(String encoded) {
+     * */
+    private List<LatLng> decodePoly(String encoded) {
 
-        List poly = new ArrayList();
+        List<LatLng> poly = new ArrayList<LatLng>();
         int index = 0, len = encoded.length();
         int lat = 0, lng = 0;
 
