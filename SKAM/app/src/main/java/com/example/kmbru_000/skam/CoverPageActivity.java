@@ -1,5 +1,7 @@
 package com.example.kmbru_000.skam;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -98,9 +100,8 @@ public class CoverPageActivity extends ActionBarActivity
 
     // update the main content by replacing fragments
     private void selectItem(int position) {
-
         switch (position) {
-            case 0://Locations & Information -> do nothing (go to libraries/dining hall info page?)
+            case 0://Home
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new CoverPageFragment())
                         .addToBackStack("Home")
@@ -112,10 +113,6 @@ public class CoverPageActivity extends ActionBarActivity
                         .addToBackStack("Libraries")
                         .commit();
                 break;
-                /*getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new RecyclerViewFragment().newInstance(0))
-                        .commit(); */
-
             case 2: //Dining Halls
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new ChooseDiningHallFragment())
@@ -123,14 +120,13 @@ public class CoverPageActivity extends ActionBarActivity
                         .commit();
                 break;
             case 3: // Border Line
-
                 break;
-            case 4:  // Cafes
+         /*   case 4:  // Cafes
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new CoverPageFragment())
                         .commit();
                 break;
-            case 5: // Exit
+           */ case 4: // Exit
                 System.exit(1);
                 break;
 
@@ -168,18 +164,48 @@ public class CoverPageActivity extends ActionBarActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        //int id = item.getItemId();
 
+        super .onOptionsItemSelected(item);
         //noinspection SimplifiableIfStatement
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.drawer_layout, PlaceholderFragment.newInstance(id))
-                .commit();
+        //getSupportFragmentManager().beginTransaction()
+          //      .replace(R.id.action_settings, PlaceholderFragment.newInstance(id))
+            //    .commit();
 
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
+        switch (item.getItemId())
+        {
+            case R.id.action_settings:
+                settingsMenuItem();
+                break;
+
+
+
         }
 
-        return super.onOptionsItemSelected(item);
+
+        //if (mDrawerToggle.onOptionsItemSelected(item)) {
+        //    return true;
+        //}
+
+
+
+        return true;
+
+    }
+
+
+    private void settingsMenuItem() {
+        new AlertDialog.Builder(this)
+        .setTitle("About gpSU")
+        .setMessage("gpSU is an app made by Syracuse students, for Syracuse students.  " +
+                "Use it to find information about the campus and make all your hopes and dreams come true!")
+        .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).show();
+
     }
 
     @Override
@@ -206,7 +232,6 @@ public class CoverPageActivity extends ActionBarActivity
 
             case R.id.bird:
                 getSupportFragmentManager().beginTransaction()
-                        //.setCustomAnimations(R.anim.slide_in_from_left, R.anim.slide_out_to_bottom)
                         .replace(R.id.container, new LibBird())
                         .addToBackStack("Bird Library")
                         .commit();
@@ -348,17 +373,17 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directArch (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "SlocumHallSyracuse";
+        destination = "LinkHallSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
 
     public void directBird (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "BirdLibrarySyracuse";
@@ -368,7 +393,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directCarnegie (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "CarnegieLibrarySyracuse";
@@ -378,27 +403,27 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directHeroy (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "HeroyGeologyBuildingSyracuse";
+        destination = "HeroySyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
 
     public void directLaw (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "HDouglasBarclayLawLibrarySyracuse";
+        destination = "CollegeOfLawSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
 
     public void directMLK (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "MartinLutherKingJRLibrarySyracuse";
@@ -408,7 +433,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directMoon (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "MoonLibrarySyracuse";
@@ -418,7 +443,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directBrockway (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "BrockwayHallSyracuse";
@@ -428,7 +453,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directErnie (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "ErnieHallSyracuse";
@@ -438,7 +463,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directGoldstein (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "GoldsteinStudentCenterSyracuse";
@@ -448,7 +473,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directGram (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "GramDiningHallSyracuse";
@@ -458,7 +483,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directSadler (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "SadlerDiningHallSyracuse";
@@ -468,7 +493,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     public void directShaw (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
-        String starting = "lifesciences";
+        String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
         destination = "ShawDiningHallSyracuse";
