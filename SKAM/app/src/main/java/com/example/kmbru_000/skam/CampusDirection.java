@@ -23,19 +23,15 @@ public class CampusDirection extends Activity implements OnClickListener{
 
         LinearLayout ll = (LinearLayout)findViewById(R.id.dir_layout);
 
-        String route = "error passing args";
+        String route;
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(CampusDirection.this);
         route = preferences.getString("route","error");
-        isCampus = preferences.getBoolean("isCampus", false);
+        isCampus = preferences.getBoolean("isCampus", true);
 
         //Grab the route selection from previous activity
 
-        Bundle extras = getIntent().getExtras();
-        if(extras !=null) {
-            route = extras.getString("route");
-            isCampus = extras.getBoolean("isCampusDir");
-        }
+
 
         //Dynamically add "TO+" button
         Button tb = new Button(this);
