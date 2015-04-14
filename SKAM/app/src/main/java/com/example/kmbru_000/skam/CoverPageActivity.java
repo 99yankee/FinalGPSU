@@ -100,9 +100,8 @@ public class CoverPageActivity extends ActionBarActivity
 
     // update the main content by replacing fragments
     private void selectItem(int position) {
-
         switch (position) {
-            case 0://Locations & Information -> do nothing (go to libraries/dining hall info page?)
+            case 0://Home
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new CoverPageFragment())
                         .addToBackStack("Home")
@@ -114,10 +113,6 @@ public class CoverPageActivity extends ActionBarActivity
                         .addToBackStack("Libraries")
                         .commit();
                 break;
-                /*getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new RecyclerViewFragment().newInstance(0))
-                        .commit(); */
-
             case 2: //Dining Halls
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new ChooseDiningHallFragment())
@@ -125,7 +120,6 @@ public class CoverPageActivity extends ActionBarActivity
                         .commit();
                 break;
             case 3: // Border Line
-
                 break;
          /*   case 4:  // Cafes
                 getSupportFragmentManager().beginTransaction()
@@ -238,7 +232,6 @@ public class CoverPageActivity extends ActionBarActivity
 
             case R.id.bird:
                 getSupportFragmentManager().beginTransaction()
-                        //.setCustomAnimations(R.anim.slide_in_from_left, R.anim.slide_out_to_bottom)
                         .replace(R.id.container, new LibBird())
                         .addToBackStack("Bird Library")
                         .commit();
