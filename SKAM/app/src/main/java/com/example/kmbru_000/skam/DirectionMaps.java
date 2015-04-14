@@ -7,8 +7,8 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.AsyncTask;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -26,6 +26,11 @@ import java.util.List;
 
 public class DirectionMaps extends FragmentActivity {
 
+    private static final LatLng LOWER_MANHATTAN = new LatLng(40.722543,
+            -73.998585);
+    private static final LatLng BROOKLYN_BRIDGE = new LatLng(40.7057, -73.9964);
+    private static final LatLng WALL_STREET = new LatLng(40.7064, -74.0094);
+    private static final LatLng LIFE_SCIENCES = new LatLng(43.0382225, -76.1307336);
     private LatLng current;
     private Location myLocation;
 
@@ -52,19 +57,13 @@ public class DirectionMaps extends FragmentActivity {
         LocationManager locationManager =(LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Criteria criteria = new Criteria();
         String provider = locationManager.getBestProvider(criteria, true);
-        try {
-            myLocation = locationManager.getLastKnownLocation(provider);
-            current = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
 
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current,
-                    16));
-            addMarkers();
-        }
-        catch (NullPointerException e){
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(43.038051, -76.130717),
-                    16));
-            addMarkers();
-        }
+        myLocation = locationManager.getLastKnownLocation(provider);
+        current = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current,
+                16));
+        addMarkers();
 
     }
 
@@ -81,37 +80,23 @@ public class DirectionMaps extends FragmentActivity {
         String output = "json";
         String url = "https://maps.googleapis.com/maps/api/directions/"
                 + output + "?" + params;
-        /*String origin ="LifeSciencesComplexSyracuse";
+        String origin ="LifeSciencesComplexSyracuse";
         origin = intent.getStringExtra(Directions.START).replaceAll("\\s", "");
         if(origin.toLowerCase().equals("currentlocation")) {
             origin = myLocation.getLatitude() + "," + myLocation.getLongitude();
         }
-        if(origin.toLowerCase().substring(0,11).equals("lifesciences")){
-            origin="LifeSciencesComplexSyracuse";
-        }
         String destianation ="LinkSyracuse";
         destianation = intent.getStringExtra(Directions.DESTINATION).replaceAll("\\s", "");
-       / if(destianation.toLowerCase().substring(0,11).equals("lifesciences")){
-            destianation="LifeSciencesComplexSyracuse";
-        }
-
         String waypoint = "";
         url = "https://maps.googleapis.com/maps/api/directions/json?origin="+origin+"&destination="+destianation+"&waypoints="+waypoint+"&mode=walking";
         System.out.println(url);
-        */
         return url;
     }
 
     private void addMarkers() {
         if (googleMap != null) {
-            try {
-                googleMap.addMarker(new MarkerOptions().position(new LatLng(43.038051, -76.130717))
-                        .title("First Point"));
-            }
-            catch(NullPointerException e){
-                googleMap.addMarker(new MarkerOptions().position(new LatLng(43.038051, -76.130717))
-                        .title("First Point"));
-            }
+            googleMap.addMarker(new MarkerOptions().position(current)
+                    .title("First Point"));
         }
     }
 
