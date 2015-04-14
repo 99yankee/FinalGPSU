@@ -49,22 +49,22 @@ public class DirectionMaps extends FragmentActivity {
         ReadTask downloadTask = new ReadTask();
         downloadTask.execute(url);
 
-        LocationManager locationManager =(LocationManager) getSystemService(Context.LOCATION_SERVICE);
+       // LocationManager locationManager =(LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Criteria criteria = new Criteria();
-        String provider = locationManager.getBestProvider(criteria, true);
-        try {
+       // String provider = locationManager.getBestProvider(criteria, true);
+       /* try {
             myLocation = locationManager.getLastKnownLocation(provider);
             current = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
 
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current,
                     16));
             addMarkers();
-        }
-        catch (NullPointerException e){
+        }*/
+       // catch (NullPointerException e){
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(43.038051, -76.130717),
                     16));
             addMarkers();
-        }
+       // }
 
     }
 
@@ -104,14 +104,14 @@ public class DirectionMaps extends FragmentActivity {
 
     private void addMarkers() {
         if (googleMap != null) {
-            try {
+          //  try {
                 googleMap.addMarker(new MarkerOptions().position(new LatLng(43.038051, -76.130717))
                         .title("First Point"));
-            }
-            catch(NullPointerException e){
+            //}
+           /* catch(NullPointerException e){
                 googleMap.addMarker(new MarkerOptions().position(new LatLng(43.038051, -76.130717))
                         .title("First Point"));
-            }
+            }*/
         }
     }
 
