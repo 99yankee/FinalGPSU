@@ -1,11 +1,12 @@
 package com.example.kmbru_000.skam;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
+import android.content.Intent;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -13,11 +14,19 @@ import android.widget.ListView;
 public class SelectRoute extends Activity {
     ListView listView;
     boolean campus = true;
+    private static final String TAG = "LOGGED::FUCK-SHIT-STACK";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_route);
         setTitle("Select Desired Route");
+
+        final SharedPreferences sharedPref;
+        final SharedPreferences.Editor editor;
+
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(SelectRoute.this);
+        editor = sharedPref.edit();
 
         listView = (ListView) findViewById(R.id.listView);
 
@@ -53,7 +62,7 @@ public class SelectRoute extends Activity {
         // Third parameter - ID of the TextView to which the data is written
         // Forth - the Array of data/*
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values);
 
         // Assign adapter to ListView
@@ -133,15 +142,20 @@ public class SelectRoute extends Activity {
                         break;
                 }
                 //Change dir buttons?
-                if (position > 5){
+                if (position > 3 && position < 19){
                     campus = false;
+                    Log.e(TAG, "inside if:::iscampus value set to false");
+                }else{
+                    campus = true;
+                    Log.e(TAG, "inside if:::iscampus value set to true");
                 }
                 //Save selection
-                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(SelectRoute.this);
-                SharedPreferences.Editor editor = sharedPref.edit();
+
                 editor.putString("route", route);
                 editor.putBoolean("isCampus", campus);
                 editor.apply();
+
+                Log.e(TAG, "iscampus value = " + campus);
 
                 //Move to direction selection
                 Intent intent = new Intent(SelectRoute.this, CampusDirection.class);

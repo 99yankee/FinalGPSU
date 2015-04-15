@@ -371,7 +371,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "SlocumHallSyracuse";
+        destination = "LinkHallSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
@@ -401,7 +401,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "HeroyGeologyBuildingSyracuse";
+        destination = "HeroySyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
@@ -411,7 +411,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "HDouglasBarclayLawLibrarySyracuse";
+        destination = "CollegeOfLawSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
