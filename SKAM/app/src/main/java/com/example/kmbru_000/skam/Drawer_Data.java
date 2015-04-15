@@ -46,6 +46,10 @@ public class Drawer_Data {
         item.put("type",TYPE1); item.put("icon", R.drawable.fork); item.put("title", "Dining Halls");
         drawerList.add(item);
 
+        item = new HashMap();
+        item.put("type",TYPE1); item.put("icon", R.drawable.flower); item.put("title", "Cafes");
+        drawerList.add(item);
+
 /////////////
 
         item = new HashMap();
@@ -54,9 +58,6 @@ public class Drawer_Data {
 
 /////////////
 
-//        item = new HashMap();
-//        item.put("type",TYPE3); item.put("title", "Change Theme");
-//        drawerList.add(item);
         item = new HashMap();
         item.put("type",TYPE3);  item.put("title", "Exit gpSU");
         drawerList.add(item);

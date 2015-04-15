@@ -1,6 +1,7 @@
 package com.example.kmbru_000.skam;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -23,6 +24,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 //import android.support.v7.widget.LinearLayoutManager;
@@ -56,6 +58,10 @@ public class CoverPageActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LayoutInflater inflater = (LayoutInflater)getApplicationContext().getSystemService
+                (Context.LAYOUT_INFLATER_SERVICE);
+        LinearLayout ll;
+        View rootView = inflater.inflate(R.layout.fragment_cover_page, null, false);
         setContentView(R.layout.activity_cover_page);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -119,14 +125,14 @@ public class CoverPageActivity extends ActionBarActivity
                         .addToBackStack("Dining")
                         .commit();
                 break;
-            case 3: // Border Line
-                break;
-         /*   case 4:  // Cafes
+            case 3: // Cafes
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new CoverPageFragment())
+                        .replace(R.id.container, new PlaceholderFragment())
                         .commit();
                 break;
-           */ case 4: // Exit
+            case 4:  // Border Line
+                break;
+            case 5: // Exit
                 System.exit(1);
                 break;
 
@@ -165,32 +171,21 @@ public class CoverPageActivity extends ActionBarActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         //int id = item.getItemId();
-
         super .onOptionsItemSelected(item);
         //noinspection SimplifiableIfStatement
         //getSupportFragmentManager().beginTransaction()
           //      .replace(R.id.action_settings, PlaceholderFragment.newInstance(id))
             //    .commit();
-
         switch (item.getItemId())
         {
             case R.id.action_settings:
                 settingsMenuItem();
                 break;
-
-
-
         }
-
-
         //if (mDrawerToggle.onOptionsItemSelected(item)) {
         //    return true;
         //}
-
-
-
         return true;
-
     }
 
 
@@ -344,7 +339,7 @@ public class CoverPageActivity extends ActionBarActivity
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+/*    public static class PlaceholderFragment extends Fragment {
 
         public PlaceholderFragment() {
         }
@@ -370,7 +365,7 @@ public class CoverPageActivity extends ActionBarActivity
             return rootView;
         }
     }
-
+*/
     public void directArch (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
         String starting = "LifeSciencesComplexSyracuse";
