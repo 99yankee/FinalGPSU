@@ -28,10 +28,17 @@ public class BusActivity extends ActionBarActivity {
         Intent intent = new Intent(this, SelectRoute.class);
         startActivity(intent);
     }
+
+    /*
+
     public void launchRouteMap(View view) {
         Intent intent = new Intent(this, RouteMap.class);
         startActivity(intent);
     }
+
+    */
+
+
     public void launchHelp(View view) {
         for (int i=0; i < 2; i++)
         {
