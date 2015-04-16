@@ -59,6 +59,7 @@ public class MyBaseAdapter extends BaseAdapter {
         TextView name;
         ImageView image;
         TextView building;
+        ImageView cafepic;
     }
 
     @Override
@@ -72,6 +73,7 @@ public class MyBaseAdapter extends BaseAdapter {
             holder.name = (TextView) rowView.findViewById(R.id.name);
             holder.image = (ImageView) rowView.findViewById(R.id.number);
             holder.building = (TextView) rowView.findViewById(R.id.building);
+  //          holder.cafepic = (ImageView) rowView.findViewById(R.id.imageView);
             rowView.setTag(holder);
         } else {
             rowView = view;
@@ -83,12 +85,13 @@ public class MyBaseAdapter extends BaseAdapter {
         holder.image.setImageResource((Integer) entry.get("image"));
         holder.name.setText((String) entry.get("name"));
         holder.building.setText((String) entry.get("building"));
+//        holder.cafepic.setImageResource((Integer) entry.get("cafepic"));
 
         TextView name = (TextView) rowView.findViewById(R.id.name);
         TextView building = (TextView) rowView.findViewById(R.id.building);
         ImageView number = (ImageView) rowView.findViewById(R.id.number);
         ImageView vmenu = (ImageView) rowView.findViewById(R.id.menu_list);
-
+        //ImageView imageView = (ImageView) rowView.findViewById(R.id.ia)
         final int pos = position;
         name.setTextColor(Color.rgb(0, 39, 79));
         vmenu.setOnClickListener(new View.OnClickListener(){

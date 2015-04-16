@@ -1,5 +1,6 @@
 package com.example.kmbru_000.skam;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,6 +25,7 @@ public class PlaceholderFragment extends Fragment {
     private  MyBaseAdapter myBaseAdapter;
     private static final String ARG_OPTION = "argument_option";
     private CafeData cafeData= new CafeData();
+    private OnButtonSelectedListener mListener;
 
     public static PlaceholderFragment newInstance(int option) {
         PlaceholderFragment fragment = new PlaceholderFragment();
@@ -68,8 +70,8 @@ public class PlaceholderFragment extends Fragment {
                                 Log.d("MyMessageS", "PF");*/
                                 hoursMenuItem(position);
                                 return true;
-                            case R.id.item_showmap:
-                                return true;
+                            /*case R.id.item_showmap:
+                                return true;*/
                             default:
                                 return false;
                         }
@@ -152,6 +154,27 @@ public class PlaceholderFragment extends Fragment {
 
                     }
                 }).show();
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (OnButtonSelectedListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnButtonSelectedListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    public interface OnButtonSelectedListener {
+        public void onButtonItemSelected(int position);
     }
 }
 

@@ -6,17 +6,18 @@
         android:id="@+id/item_hours"
         android:icon="@drawable/cafe_clock_icon"
         app:showAsAction="ifRoom|withText"
-        android:title="Hours"
-        android:titleCondensed="Hours">
+        android:title="More Information"
+        android:titleCondensed="More Info"
+        >
 
     </item>
 
-    <item
+    <!--<item
         android:id="@+id/item_showmap"
         android:icon="@drawable/cafe_map_icon"
         app:showAsAction="ifRoom|withText"
         android:title="Show on map"
         android:titleCondensed="Show on map"
         ></item>
-
+-->
 </menu>

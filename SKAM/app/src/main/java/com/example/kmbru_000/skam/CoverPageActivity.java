@@ -39,7 +39,9 @@ public class CoverPageActivity extends ActionBarActivity
         dining_brockway.OnFragmentInteractionListener,
         dining_ernie.OnFragmentInteractionListener, dining_goldstein.OnFragmentInteractionListener,
         dining_graham.OnFragmentInteractionListener, dining_sadler.OnFragmentInteractionListener,
-        dining_shaw.OnFragmentInteractionListener {
+        dining_shaw.OnFragmentInteractionListener,
+        PlaceholderFragment.OnButtonSelectedListener
+        {
 
     private RelativeLayout mDrawer;
     private DrawerLayout mDrawerLayout;
@@ -128,7 +130,8 @@ public class CoverPageActivity extends ActionBarActivity
             case 3: // Cafes
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new PlaceholderFragment())
-                        .commit();
+                        .addToBackStack("Cafe")
+                        .commitAllowingStateLoss();
                 break;
             case 4:  // Border Line
                 break;

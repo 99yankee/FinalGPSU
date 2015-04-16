@@ -3,18 +3,10 @@
     <item>
         <shape android:shape="rectangle">
             <corners android:radius="5dp" />
-            <gradient
-                android:angle="90"
-                android:centerColor="#ffa4b1d8"
-                android:centerY="0.05"
-                android:startColor="#29ffffff"
-                android:endColor="#29ffffff"
-                />
+
         </shape>
     </item>
     <item>
-        <inset
-            android:drawable="@drawable/button_pressed_direct"
-            android:insetBottom="3dp" />
+
     </item>
 </layer-list>
