@@ -84,6 +84,15 @@ public class CafeData {
         building = "S.I.Newhouse School of Public Communications, Rm.244";
         cafesList.add(createCafe("Food.com", R.drawable.four, building, phone, address, hours, R.drawable.whitman));
 
+        phone = "(315)443-8395";
+        address = "";
+        hours[28] = "Mon-Thurs: 8am-7pm";
+        hours[29] = "Fri: 8am-2:30pm";
+        hours[30] = "Sat: Closed";
+        hours[31] = "Sun: Closed";
+        building = "Life Sciences";
+        cafesList.add(createCafe("Freshens", R.drawable.five, building, phone, address, hours, R.drawable.whitman));
+
         phone = "";
         address = "";
         hours[16] = "Mon-Thurs: 9am-7pm";
@@ -91,7 +100,7 @@ public class CafeData {
         hours[18] = "Sat: Closed";
         hours[19] = "Sun: Closed";
         building = "Hinds Hall";
-        cafesList.add(createCafe("iCafe", R.drawable.five, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("iCafe", R.drawable.six, building, phone, address, hours, R.drawable.whitman));
 
         phone = "(315)443-4314";
         address = "";
@@ -100,7 +109,7 @@ public class CafeData {
         hours[22] = "Sat: 7:30pm-12am";
         hours[23] = "Sun: 7:30pm-12am";
         building = "Flint&Day Hall";
-        cafesList.add(createCafe("Junction Snack Bar", R.drawable.six, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("Junction Snack Bar", R.drawable.seven, building, phone, address, hours, R.drawable.whitman));
 
         phone = "(315)443-2870";
         address = "";
@@ -109,16 +118,7 @@ public class CafeData {
         hours[26] = "Sat: Closed";
         hours[27] = "Sun: Closed";
         building = "Dineen Hall";
-        cafesList.add(createCafe("Neoporent Cafe", R.drawable.seven, building, phone, address, hours, R.drawable.whitman));
-
-        phone = "(315)443-8395";
-        address = "";
-        hours[28] = "Mon-Thurs: 8am-7pm";
-        hours[29] = "Fri: 8am-2:30pm";
-        hours[30] = "Sat: Closed";
-        hours[31] = "Sun: Closed";
-        building = "Life Sciences";
-        cafesList.add(createCafe("Freshens", R.drawable.eight, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("Neoporent Cafe", R.drawable.eight, building, phone, address, hours, R.drawable.whitman));
 
         phone = "(315)443-3966";
         address = "";
