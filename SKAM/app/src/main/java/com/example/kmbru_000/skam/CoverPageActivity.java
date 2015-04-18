@@ -424,7 +424,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "MartinLutherKingJRLibrarySyracuse";
+        destination = "SimsHallSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
@@ -444,7 +444,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "BrockwayHallSyracuse";
+        destination = "401VanBurenStSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
@@ -474,7 +474,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "GramDiningHallSyracuse";
+        destination = "1Mt.OlympusDriveSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
@@ -484,7 +484,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "SadlerDiningHallSyracuse";
+        destination = "SadlerHallSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
@@ -494,7 +494,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "ShawDiningHallSyracuse";
+        destination = "775ComstockAveSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
