@@ -67,7 +67,7 @@ public class DirectionMaps extends FragmentActivity {
         }
 
         catch (NullPointerException e) {
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(43.0377, -76.1340),
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(43.03774, -76.13086),
                     17));
         }
 

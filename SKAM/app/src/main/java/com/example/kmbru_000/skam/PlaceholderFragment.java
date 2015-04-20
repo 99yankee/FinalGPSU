@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,7 +21,7 @@ import java.util.HashMap;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class PlaceholderFragment extends Fragment {
+public class PlaceholderFragment extends Fragment implements View.OnClickListener {
 
     private  MyBaseAdapter myBaseAdapter;
     private static final String ARG_OPTION = "argument_option";
@@ -88,7 +89,7 @@ public class PlaceholderFragment extends Fragment {
         String title = "";
         String[] message;
         String phone;
-        String url;
+      //  String url;
         int hourX = position*4;
 
         HashMap<String, ?> map = new HashMap(cafeData.getItem(position));
@@ -96,7 +97,7 @@ public class PlaceholderFragment extends Fragment {
         title = map.get("name").toString();
         message = (String[]) map.get("hours");
         phone = (String) map.get("phone");
-        url = (String) map.get("url");
+      //  url = (String) map.get("url");
 
         //  AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = (LayoutInflater)getActivity().getSystemService
@@ -116,16 +117,16 @@ public class PlaceholderFragment extends Fragment {
                 ll = (LinearLayout) inflater.inflate(R.layout.fragment_cafe_food, null, false);
                 break;
             case 4:
-                ll = (LinearLayout) inflater.inflate(R.layout.fragment_cafe_icafe, null, false);
+                ll = (LinearLayout) inflater.inflate(R.layout.fragment_cafe_freshens, null, false);
                 break;
             case 5:
-                ll = (LinearLayout) inflater.inflate(R.layout.fragment_cafe_junction, null, false);
+                ll = (LinearLayout) inflater.inflate(R.layout.fragment_cafe_icafe, null, false);
                 break;
             case 6:
-                ll = (LinearLayout) inflater.inflate(R.layout.fragment_cafe_neo, null, false);
+                ll = (LinearLayout) inflater.inflate(R.layout.fragment_cafe_junction, null, false);
                 break;
             case 7:
-                ll = (LinearLayout) inflater.inflate(R.layout.fragment_cafe_freshens, null, false);
+                ll = (LinearLayout) inflater.inflate(R.layout.fragment_cafe_neo, null, false);
                 break;
             case 8:
                 ll = (LinearLayout) inflater.inflate(R.layout.fragment_cafe_olsten, null, false);
@@ -143,6 +144,7 @@ public class PlaceholderFragment extends Fragment {
                 ll = (LinearLayout) inflater.inflate(R.layout.fragment_cafe_blinker, null, false);
                 break;
         }
+        Log.d("Message", "Phone: " + phone + "  " + title);
         new AlertDialog.Builder(getActivity())
                 .setTitle(title)
                 .setView(ll)
@@ -171,6 +173,12 @@ public class PlaceholderFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        myBaseAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 
     public interface OnButtonSelectedListener {

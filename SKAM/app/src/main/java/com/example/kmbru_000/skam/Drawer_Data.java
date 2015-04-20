@@ -59,6 +59,10 @@ public class Drawer_Data {
 /////////////
 
         item = new HashMap();
+        item.put("type",TYPE3);  item.put("title", "Views of 'Cuse");
+        drawerList.add(item);
+
+        item = new HashMap();
         item.put("type",TYPE3);  item.put("title", "Exit gpSU");
         drawerList.add(item);
     }

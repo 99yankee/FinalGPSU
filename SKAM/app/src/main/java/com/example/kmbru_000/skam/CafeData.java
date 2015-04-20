@@ -55,7 +55,7 @@ public class CafeData {
         hours[2] = "Sat: Closed";
         hours[3] = "Sun: Closed";
         building = "HBC, Atrium Level";
-        cafesList.add(createCafe("Blinker Deli", R.drawable.one, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("Blinker Deli", R.drawable.one, building, phone, address, hours));
 
         phone = "(315)443-1636";
         address = "";
@@ -64,7 +64,7 @@ public class CafeData {
         hours[6] = "Sat: 7:30-12am";
         hours[7] = "Sun: 7:30-12am";
         building = "Brockway Hall Basement";
-        cafesList.add(createCafe("Brockway Food Court", R.drawable.two, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("Brockway Food Court", R.drawable.two, building, phone, address, hours));
 
         phone = "(315)443-9381";
         address = "";
@@ -73,7 +73,7 @@ public class CafeData {
         hours[10] = "Sat: Closed";
         hours[11] = "Sun: Closed";
         building = "Eggers Hall, Rm.300";
-        cafesList.add(createCafe("Eggers Cafe", R.drawable.three, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("Eggers Cafe", R.drawable.three, building, phone, address, hours));
 
         phone = "(315)443-4870";
         address = "";
@@ -82,7 +82,7 @@ public class CafeData {
         hours[14] = "Sat: Closed";
         hours[15] = "Sun: Closed";
         building = "S.I.Newhouse School of Public Communications, Rm.244";
-        cafesList.add(createCafe("Food.com", R.drawable.four, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("Food.com", R.drawable.four, building, phone, address, hours));
 
         phone = "(315)443-8395";
         address = "";
@@ -91,7 +91,7 @@ public class CafeData {
         hours[30] = "Sat: Closed";
         hours[31] = "Sun: Closed";
         building = "Life Sciences";
-        cafesList.add(createCafe("Freshens", R.drawable.five, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("Freshens", R.drawable.five, building, phone, address, hours));
 
         phone = "";
         address = "";
@@ -100,7 +100,7 @@ public class CafeData {
         hours[18] = "Sat: Closed";
         hours[19] = "Sun: Closed";
         building = "Hinds Hall";
-        cafesList.add(createCafe("iCafe", R.drawable.six, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("iCafe", R.drawable.six, building, phone, address, hours));
 
         phone = "(315)443-4314";
         address = "";
@@ -109,7 +109,7 @@ public class CafeData {
         hours[22] = "Sat: 7:30pm-12am";
         hours[23] = "Sun: 7:30pm-12am";
         building = "Flint&Day Hall";
-        cafesList.add(createCafe("Junction Snack Bar", R.drawable.seven, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("Junction Snack Bar", R.drawable.seven, building, phone, address, hours));
 
         phone = "(315)443-2870";
         address = "";
@@ -118,7 +118,7 @@ public class CafeData {
         hours[26] = "Sat: Closed";
         hours[27] = "Sun: Closed";
         building = "Dineen Hall";
-        cafesList.add(createCafe("Neoporent Cafe", R.drawable.eight, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("Neoporent Cafe", R.drawable.eight, building, phone, address, hours));
 
         phone = "(315)443-3966";
         address = "";
@@ -127,7 +127,7 @@ public class CafeData {
         hours[34] = "Sat: Closed";
         hours[35] = "Sun: Closed";
         building = "Whitman School of Management, Rm.211";
-        cafesList.add(createCafe("Olsten Cafe", R.drawable.nine, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("Olsten Cafe", R.drawable.nine, building, phone, address, hours));
 
         phone = "(315)443-6201";
         address = "";
@@ -136,7 +136,7 @@ public class CafeData {
         hours[38] = "Sat: 11am-6pm";
         hours[39] = "Sun: 11am-11pm";
         building = "Bird Library, Entrance Level";
-        cafesList.add(createCafe("Pages", R.drawable.ten, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("Pages", R.drawable.ten, building, phone, address, hours));
 
         phone = "(315)443-8422";
         address = "162 Slocum";
@@ -145,7 +145,7 @@ public class CafeData {
         hours[42] = "Sat: Closed";
         hours[43] = "Sun: Closed";
         building = "Slocum Hall, Main Floor";
-        cafesList.add(createCafe("Slocum Cafe", R.drawable.eleven, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("Slocum Cafe", R.drawable.eleven, building, phone, address, hours));
 
         phone = "(315)443-6201";
         address = "350 W. Fayette St.";
@@ -154,13 +154,13 @@ public class CafeData {
         hours[46] = "Sat: Closed";
         hours[47] = "Sun: Closed";
         building = "Warehouse";
-        cafesList.add(createCafe("The Warehouse Cafe", R.drawable.twelve, building, phone, address, hours, R.drawable.whitman));
+        cafesList.add(createCafe("The Warehouse Cafe", R.drawable.twelve, building, phone, address, hours));
 
     }
 
 
     private HashMap createCafe(String name, int image, String building, String phone,
-                               String address, String[] hours, int cafepic) {
+                               String address, String[] hours) {
         HashMap cafe = new HashMap();
         cafe.put("image", image);
         cafe.put("name", name);
@@ -168,7 +168,7 @@ public class CafeData {
         cafe.put("phone", phone);
         cafe.put("address", address);
         cafe.put("hours", hours);
-        cafe.put("cafepic", cafepic);
+        //cafe.put("cafepic", cafepic);
 
         return cafe;
     }

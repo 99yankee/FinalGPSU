@@ -59,7 +59,7 @@ public class MyBaseAdapter extends BaseAdapter {
         TextView name;
         ImageView image;
         TextView building;
-        ImageView cafepic;
+      //  ImageView cafepic;
     }
 
     @Override

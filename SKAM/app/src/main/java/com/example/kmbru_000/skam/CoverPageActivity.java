@@ -43,6 +43,7 @@ public class CoverPageActivity extends ActionBarActivity
         PlaceholderFragment.OnButtonSelectedListener
         {
 
+    //Implement variables for navigation bar and toolbar
     private RelativeLayout mDrawer;
     private DrawerLayout mDrawerLayout;
     private RecyclerView mDrawerList;
@@ -54,9 +55,11 @@ public class CoverPageActivity extends ActionBarActivity
     private CharSequence mTitle;
     private String[] mPlanetTitles;
 
-    public Button buttonred;
-
-    //
+    /*
+    When creating the main activity/cover page, create the:
+    -navigation bar & it's corresponding links
+    -toolbar
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,14 +103,15 @@ public class CoverPageActivity extends ActionBarActivity
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        buttonred = (Button) findViewById(R.id.mapbutton);
         if (savedInstanceState == null) {
             selectItem(0);
         }
     }
 
+    // Using the navigation bar,
     // update the main content by replacing fragments
     private void selectItem(int position) {
+        Intent intent;
         switch (position) {
             case 0://Home
                 getSupportFragmentManager().beginTransaction()
@@ -132,10 +136,16 @@ public class CoverPageActivity extends ActionBarActivity
                         .replace(R.id.container, new PlaceholderFragment())
                         .addToBackStack("Cafe")
                         .commitAllowingStateLoss();
+               /* intent = new Intent(this, CafeActivity.class);
+                startActivity(intent);*/
                 break;
             case 4:  // Border Line
                 break;
-            case 5: // Exit
+            case 5: // Pictures of SU
+                intent = new Intent(this, ViewsofCuseActivity.class);
+                startActivity(intent);
+                break;
+            case 6: // Exit
                 System.exit(1);
                 break;
 
@@ -160,7 +170,7 @@ public class CoverPageActivity extends ActionBarActivity
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-
+    //Create the overflow menu button for "settings"
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -175,29 +185,22 @@ public class CoverPageActivity extends ActionBarActivity
         // as you specify a parent activity in AndroidManifest.xml.
         //int id = item.getItemId();
         super .onOptionsItemSelected(item);
-        //noinspection SimplifiableIfStatement
-        //getSupportFragmentManager().beginTransaction()
-          //      .replace(R.id.action_settings, PlaceholderFragment.newInstance(id))
-            //    .commit();
         switch (item.getItemId())
         {
             case R.id.action_settings:
                 settingsMenuItem();
                 break;
         }
-        //if (mDrawerToggle.onOptionsItemSelected(item)) {
-        //    return true;
-        //}
         return true;
     }
 
-
+    //Create content of the overflow menu "settings" button
     private void settingsMenuItem() {
         new AlertDialog.Builder(this)
         .setTitle("About gpSU")
         .setMessage("gpSU is an app made by Syracuse students, for Syracuse students.  " +
                 "Use it to find information about the campus and make all your hopes and dreams come true!")
-        .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+        .setNeutralButton("OK!", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
@@ -206,6 +209,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     }
 
+    //Create links for the main buttons on the cover page
     @Override
     public void onButtonItemSelected(int id) {
         Intent intent;
@@ -333,6 +337,8 @@ public class CoverPageActivity extends ActionBarActivity
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+
 /*
     @Override
     public void onFragmentInteraction(Uri uri) { ///////////////////////////////////////////////////////////

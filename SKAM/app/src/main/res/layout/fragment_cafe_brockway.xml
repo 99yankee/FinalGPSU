@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="311dp"
+        android:layout_height="240dp"
         android:id="@+id/imageView"
         android:src="@drawable/brockway"
         android:layout_gravity="center"
