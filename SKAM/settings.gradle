@@ -1,2 +1,1 @@
-include ':app'
-include 'libraries/Support_v4_NineOldAndroids-r19'
+include 'libraries/Support_v4_NineOldAndroids-r19'':app'
