@@ -1,6 +1,7 @@
 package com.example.kmbru_000.skam;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -23,6 +24,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 //import android.support.v7.widget.LinearLayoutManager;
@@ -37,8 +39,11 @@ public class CoverPageActivity extends ActionBarActivity
         dining_brockway.OnFragmentInteractionListener,
         dining_ernie.OnFragmentInteractionListener, dining_goldstein.OnFragmentInteractionListener,
         dining_graham.OnFragmentInteractionListener, dining_sadler.OnFragmentInteractionListener,
-        dining_shaw.OnFragmentInteractionListener {
+        dining_shaw.OnFragmentInteractionListener,
+        PlaceholderFragment.OnButtonSelectedListener
+        {
 
+    //Implement variables for navigation bar and toolbar
     private RelativeLayout mDrawer;
     private DrawerLayout mDrawerLayout;
     private RecyclerView mDrawerList;
@@ -50,12 +55,18 @@ public class CoverPageActivity extends ActionBarActivity
     private CharSequence mTitle;
     private String[] mPlanetTitles;
 
-    public Button buttonred;
-
-    //
+    /*
+    When creating the main activity/cover page, create the:
+    -navigation bar & it's corresponding links
+    -toolbar
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LayoutInflater inflater = (LayoutInflater)getApplicationContext().getSystemService
+                (Context.LAYOUT_INFLATER_SERVICE);
+        LinearLayout ll;
+        View rootView = inflater.inflate(R.layout.fragment_cover_page, null, false);
         setContentView(R.layout.activity_cover_page);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -92,14 +103,15 @@ public class CoverPageActivity extends ActionBarActivity
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        buttonred = (Button) findViewById(R.id.mapbutton);
         if (savedInstanceState == null) {
             selectItem(0);
         }
     }
 
+    // Using the navigation bar,
     // update the main content by replacing fragments
     private void selectItem(int position) {
+        Intent intent;
         switch (position) {
             case 0://Home
                 getSupportFragmentManager().beginTransaction()
@@ -119,14 +131,21 @@ public class CoverPageActivity extends ActionBarActivity
                         .addToBackStack("Dining")
                         .commit();
                 break;
-            case 3: // Border Line
-                break;
-         /*   case 4:  // Cafes
+            case 3: // Cafes
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new CoverPageFragment())
-                        .commit();
+                        .replace(R.id.container, new PlaceholderFragment())
+                        .addToBackStack("Cafe")
+                        .commitAllowingStateLoss();
+               /* intent = new Intent(this, CafeActivity.class);
+                startActivity(intent);*/
                 break;
-           */ case 4: // Exit
+            case 4:  // Border Line
+                break;
+            case 5: // Pictures of SU
+                intent = new Intent(this, ViewsofCuseActivity.class);
+                startActivity(intent);
+                break;
+            case 6: // Exit
                 System.exit(1);
                 break;
 
@@ -151,7 +170,7 @@ public class CoverPageActivity extends ActionBarActivity
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-
+    //Create the overflow menu button for "settings"
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -165,41 +184,23 @@ public class CoverPageActivity extends ActionBarActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         //int id = item.getItemId();
-
         super .onOptionsItemSelected(item);
-        //noinspection SimplifiableIfStatement
-        //getSupportFragmentManager().beginTransaction()
-          //      .replace(R.id.action_settings, PlaceholderFragment.newInstance(id))
-            //    .commit();
-
         switch (item.getItemId())
         {
             case R.id.action_settings:
                 settingsMenuItem();
                 break;
-
-
-
         }
-
-
-        //if (mDrawerToggle.onOptionsItemSelected(item)) {
-        //    return true;
-        //}
-
-
-
         return true;
-
     }
 
-
+    //Create content of the overflow menu "settings" button
     private void settingsMenuItem() {
         new AlertDialog.Builder(this)
         .setTitle("About gpSU")
         .setMessage("gpSU is an app made by Syracuse students, for Syracuse students.  " +
                 "Use it to find information about the campus and make all your hopes and dreams come true!")
-        .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+        .setNeutralButton("OK!", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
@@ -208,6 +209,7 @@ public class CoverPageActivity extends ActionBarActivity
 
     }
 
+    //Create links for the main buttons on the cover page
     @Override
     public void onButtonItemSelected(int id) {
         Intent intent;
@@ -335,6 +337,8 @@ public class CoverPageActivity extends ActionBarActivity
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+
 /*
     @Override
     public void onFragmentInteraction(Uri uri) { ///////////////////////////////////////////////////////////
@@ -344,7 +348,7 @@ public class CoverPageActivity extends ActionBarActivity
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+/*    public static class PlaceholderFragment extends Fragment {
 
         public PlaceholderFragment() {
         }
@@ -370,7 +374,7 @@ public class CoverPageActivity extends ActionBarActivity
             return rootView;
         }
     }
-
+*/
     public void directArch (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
         String starting = "LifeSciencesComplexSyracuse";
@@ -426,7 +430,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "MartinLutherKingJRLibrarySyracuse";
+        destination = "SimsHallSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
@@ -446,7 +450,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "BrockwayHallSyracuse";
+        destination = "401VanBurenStSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
@@ -476,7 +480,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "GramDiningHallSyracuse";
+        destination = "1Mt.OlympusDriveSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
@@ -486,7 +490,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "SadlerDiningHallSyracuse";
+        destination = "SadlerHallSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
@@ -496,7 +500,7 @@ public class CoverPageActivity extends ActionBarActivity
         String starting = "LifeSciencesComplexSyracuse";
         intent.putExtra(Directions.START, starting);
         String destination = "";
-        destination = "ShawDiningHallSyracuse";
+        destination = "775ComstockAveSyracuse";
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }

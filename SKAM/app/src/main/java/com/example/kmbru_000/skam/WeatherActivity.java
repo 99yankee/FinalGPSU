@@ -47,6 +47,7 @@ public class WeatherActivity extends ActionBarActivity {
         return false;
     }
 
+
     private void showInputDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Change city");
@@ -68,6 +69,9 @@ public class WeatherActivity extends ActionBarActivity {
         wf.changeCity(city);
         new CityPreference(this).setCity(city);
     }
+
+    //These methods are mostly responsible for allowing the user to change city
+    //but that option is currently hidden.
 
 }
     /**
