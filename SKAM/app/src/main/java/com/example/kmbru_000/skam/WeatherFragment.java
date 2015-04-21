@@ -42,6 +42,7 @@ public class WeatherFragment extends Fragment {
     }
 
     @Override
+    //fields are updated once Activity gets opened
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_weather, container, false);
@@ -61,6 +62,8 @@ public class WeatherFragment extends Fragment {
         updateWeatherData(new CityPreference(getActivity()).getCity());
     }
 
+
+    //This method parses in JSON object to get the latest weather information
     private void updateWeatherData(final String city){
         new Thread(){
             public void run(){
@@ -84,6 +87,8 @@ public class WeatherFragment extends Fragment {
         }.start();
     }
 
+
+    //Fills in the fields of the data it receives from weather API
     private void renderWeather(JSONObject json){
         try {
             cityField.setText(json.getString("name").toUpperCase(Locale.US) +
@@ -113,6 +118,7 @@ public class WeatherFragment extends Fragment {
         }
     }
 
+    //Using ID numbers, this determines which icon will be displayed when the json data is received
     private void setWeatherIcon(int actualId, long sunrise, long sunset){
         int id = actualId / 100;
         String icon = "";
@@ -124,6 +130,7 @@ public class WeatherFragment extends Fragment {
                 icon = getActivity().getString(R.string.weather_clear_night);
             }
         } else {
+            //switch statement that receives ID number
             switch(id) {
                 case 2 : icon = getActivity().getString(R.string.weather_thunder);
                     break;
