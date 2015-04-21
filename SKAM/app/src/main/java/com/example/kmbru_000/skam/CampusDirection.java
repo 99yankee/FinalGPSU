@@ -57,7 +57,7 @@ public class CampusDirection extends Activity implements OnClickListener{
         fb.setOnClickListener(this);
         ll.addView(fb);
 
-        //Pass the route selection
+        //Pass the route selection to next activity
         intent = new Intent(this, SelectStop.class);
         intent.putExtra("route", route);
 
@@ -65,6 +65,8 @@ public class CampusDirection extends Activity implements OnClickListener{
     public void onClick(View v){
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(CampusDirection.this);
         SharedPreferences.Editor editor = sharedPref.edit();
+
+        //save selection for when we hit back button on next activity
         switch (v.getId()) {
             case (1):
                 if(isCampus) {
@@ -81,6 +83,6 @@ public class CampusDirection extends Activity implements OnClickListener{
 
         }
         editor.apply();
-        startActivity(intent);
+        startActivity(intent);  //move to stop selection activity
     }
 }

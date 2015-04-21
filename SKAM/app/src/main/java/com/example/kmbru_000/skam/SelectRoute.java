@@ -141,7 +141,7 @@ public class SelectRoute extends Activity {
                     default:
                         break;
                 }
-                //Change dir buttons?
+                //Change dir buttons
                 if (position > 3 && position < 19){
                     campus = false;
                     Log.e(TAG, "inside if:::iscampus value set to false");

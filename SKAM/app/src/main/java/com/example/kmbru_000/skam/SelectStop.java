@@ -31,7 +31,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 
 public class SelectStop extends Activity {
-    private static final String TAG = "LOGGED:::stopInfo";
+    private static final String TAG = "LOGGED:::SelectStop";
     ListView stops;
     String route, dir;
     String[] values, ids;
@@ -51,6 +51,9 @@ public class SelectStop extends Activity {
         //create reference to list view
         stops = (ListView) findViewById(R.id.stops);
 
+        //creates a thread to populate the list view with stops based on users route & direction selection
+        //this thread also creates an array of stop ids that directly corresponds to the list of stops
+        //once a stop is selected it is the stop id that is passed on to the next activity
         Thread getstops = new Thread()
         {
             public void run()
@@ -75,7 +78,7 @@ public class SelectStop extends Activity {
                         //parse the string to get arrival time
                         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
-                        DocumentBuilder db = (DocumentBuilder) dbf.newDocumentBuilder();
+                        DocumentBuilder db = dbf.newDocumentBuilder();
                         InputSource is = new InputSource();
                         is.setCharacterStream(new StringReader(fResponse));
 
@@ -84,10 +87,11 @@ public class SelectStop extends Activity {
                         //generates linked list of stops on the selected route
                         NodeList nodes = doc.getElementsByTagName("stop");
 
-                        //Contains
+                        //Initialize arrays for stop name & id storage
                         String[] stopNamesList = new String[nodes.getLength()];
                         String[] stopIDs =  new String[nodes.getLength()];
 
+                        //populate the arrays
                         for (int i = 0; i < nodes.getLength(); i++) {
 
                             Element stop = (Element) nodes.item(i);
@@ -113,9 +117,6 @@ public class SelectStop extends Activity {
                         e.printStackTrace();
                     }
 
-                    for (int i = 0; i< values.length;i++){
-                        Log.e(TAG, values[i]);
-                    }
 
                 }
                 catch (MalformedURLException ex)
@@ -125,6 +126,7 @@ public class SelectStop extends Activity {
                 catch (IOException ex){
                     if(connection == null){
                         //connection error
+                        Log.e(TAG, "connection error", ex);
                     }
                 }
 
@@ -146,9 +148,9 @@ public class SelectStop extends Activity {
         // First parameter - Context
         // Second parameter - Layout for the row
         // Third parameter - ID of the TextView to which the data is written
-        // Forth - the Array of data
+        // Forth - the Array of stops
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values);
 
         // Assign adapter to ListView
@@ -160,6 +162,8 @@ public class SelectStop extends Activity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
+                //passes the route selected in the previous activity and passes the coorisponding stop id to the stop the user has selected,
+                //in the populated list view, to the next activity
                 Intent intent = new Intent(SelectStop.this, stopInfo.class);
                 intent.putExtra("rtid", route);
                 intent.putExtra("stpid", ids[position]);
@@ -169,13 +173,7 @@ public class SelectStop extends Activity {
             }
         });
     }
-    @Override
-    public void onResume() {
-        super.onResume();  // Always call the superclass method first
-
-        // Get the Camera instance as the activity achieves full user focus
-        Log.e(TAG,"on resume called");
-    }
+    //extracts character data from a given element, in our case a given line of xml
     public static String getCharacterDataFromElement(Element e) {
         Node child = e.getFirstChild();
         if (child instanceof CharacterData) {
