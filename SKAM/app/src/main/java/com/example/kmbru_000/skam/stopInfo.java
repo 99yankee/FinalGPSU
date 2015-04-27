@@ -33,7 +33,7 @@ public class stopInfo extends Activity {
         setContentView(R.layout.activity_stop_info);
         setTitle("Arrival Time");
 
-        //initialize passed vars
+        //initialize passed vars with error for debugging
         rtid = "error";
         stpid = "error";
 
@@ -47,6 +47,7 @@ public class stopInfo extends Activity {
         Log.e(TAG, "route found in bundle: " + rtid);
         Log.e(TAG, "stpid found in bundle: " + stpid);
 
+        //creates a thread that executes an http request given the route and stopIds selected in the previous activities as arguments
         new Thread()
         {
             public void run()
@@ -66,7 +67,7 @@ public class stopInfo extends Activity {
                         //parse the string to get arrival time
                         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
-                        DocumentBuilder db = (DocumentBuilder) dbf.newDocumentBuilder();
+                        DocumentBuilder db = dbf.newDocumentBuilder();
                         InputSource is = new InputSource();
                         is.setCharacterStream(new StringReader(fResponse));
 
@@ -83,6 +84,7 @@ public class stopInfo extends Activity {
 
                     final TextView fView = (TextView)findViewById(R.id.main);
 
+                    //set the arrival time on screen
                     fView.post(new Runnable(){
 
                         @Override
@@ -98,7 +100,7 @@ public class stopInfo extends Activity {
                 }
                 catch (IOException ex){
                     if(connection == null){
-
+                        Log.e(TAG, "connection error", ex);
                     }
                 }
 
@@ -106,7 +108,7 @@ public class stopInfo extends Activity {
 
         }.start();
     }
-
+    //extract characters from the given line of xml, in this case passed as a node element in a list
     public static String getCharacterDataFromElement(Element e) {
         Node child = e.getFirstChild();
         if (child instanceof CharacterData) {
