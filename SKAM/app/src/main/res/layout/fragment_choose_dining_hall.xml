@@ -3,18 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.kmbru_000.skam.CoverPageActivity"
+    android:background="@drawable/lightblue_gradient"
     >
-    <!--
-    tools:context="com.example.kmbru_000.skam.ChooseLibActivity$PlaceholderFragment"
-    -->
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_centerHorizontal="true"
-        android:weightSum="3"
-        android:layout_below="@+id/imageView2"
+        android:weightSum="7"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
@@ -22,16 +19,50 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Select a dining hall:"
-            android:id="@+id/textView"
-            android:layout_centerVertical="true"
+            android:text="                SU Dining Halls"
+            android:id="@+id/textView3"
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#fff"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/textView"
             android:layout_alignParentStart="true"
-            android:textColor="#ff0920a0"
-            android:layout_weight="0.5"
-            android:paddingTop="10dp"/>
+            android:id="@+id/linearLayouta"
+            android:weightSum="2"
+            android:layout_weight="1"
+            android:divider="#d0000066"
+            android:dividerPadding="2dp">
+
+            <ImageButton
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageButton"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ernieicon"/>
+            <ImageButton
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageButton2"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/brockwayicon"/>
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -41,104 +72,304 @@
             android:layout_alignParentStart="true"
             android:id="@+id/linearLayout"
             android:weightSum="2"
+            android:layout_weight="1"
             android:layout_marginTop="4dp"
             android:divider="#d0000066"
             android:dividerPadding="2dp">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Ernie Davis"
                 android:id="@+id/ernie"
                 android:layout_alignParentStart="true"
-                android:layout_weight=".95"
+                android:layout_weight="1"
                 android:layout_marginLeft="4dp"
-                android:background="@drawable/button_shaded"
+                android:background="@drawable/button_pressable"
                 />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Brockway"
                 android:id="@+id/brockway"
                 android:layout_alignEnd="@+id/imageView2"
-                android:layout_weight=".95"
+                android:layout_weight="1"
                 android:layout_marginLeft="4dp"
-                android:background="@drawable/button_shaded"/>
+                android:background="@drawable/button_pressable"/>
 
         </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentStart="true"
+            android:id="@+id/linearLayoutb"
+            android:weightSum="2"
+            android:layout_weight="1"
+            android:divider="#d0000066"
+            android:dividerPadding="2dp">
+
+            <ImageButton
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageButton3"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/goldsteinicon"/>
+            <ImageButton
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageButton4"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/grahamicon"/>
+        </LinearLayout>
+
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/linearlayout2"
-            android:weightSum="3"
+            android:weightSum="2"
+            android:layout_weight="1"
             android:layout_marginTop="4dp"
             android:layout_below="@+id/linearLayout"
             android:layout_alignParentStart="true">
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Goldstein"
                 android:id="@+id/goldstein"
-                android:layout_weight="1.45"
+                android:layout_weight="1"
                 android:layout_marginLeft="4dp"
-                android:background="@drawable/button_shaded"/>
+                android:background="@drawable/button_pressable"/>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Graham"
                 android:id="@+id/graham"
                 android:layout_alignParentEnd="true"
-                android:layout_weight="1.45"
+                android:layout_weight="1"
                 android:layout_marginLeft="4dp"
-                android:background="@drawable/button_shaded"/>
+                android:background="@drawable/button_pressable"/>
         </LinearLayout>
+
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:weightSum="3"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentStart="true"
+            android:id="@+id/linearLayoutc"
+            android:weightSum="2"
+            android:layout_weight="1"
+            android:divider="#d0000066"
+            android:dividerPadding="2dp">
+
+            <ImageButton
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageButton5"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/sadlericon"/>
+            <ImageButton
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageButton6"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/shawicon"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_weight="1"
             android:layout_marginTop="4dp"
             android:id="@+id/linearlayout3"
             android:layout_below="@+id/linearlayout2"
             android:layout_alignParentStart="true">
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Sadler"
                 android:id="@+id/sadler"
                 android:layout_alignParentBottom="true"
                 android:layout_alignEnd="@+id/goldstein"
-                android:layout_weight="1.45"
+                android:layout_weight="1"
                 android:layout_marginLeft="4dp"
-                android:background="@drawable/button_shaded"/>
+                android:background="@drawable/button_pressable"/>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Shaw"
                 android:id="@+id/shaw"
                 android:layout_alignBottom="@+id/sadler"
                 android:layout_alignStart="@+id/graham"
-                android:layout_weight="1.45"
+                android:layout_weight="1"
                 android:layout_marginLeft="4dp"
-                android:background="@drawable/button_shaded"/>
+                android:background="@drawable/button_pressable"/>
         </LinearLayout>
 
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="250dp"
-        android:id="@+id/imageView2"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:src="@drawable/sadler"
-        android:layout_weight="1"
-        android:scaleType="fitXY"
-        />
 </RelativeLayout>
+
+
+    <!--
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerHorizontal="true"
+            android:weightSum="3"
+            android:layout_below="@+id/imageView2"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Select a dining hall:"
+                android:id="@+id/textView"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:textColor="#ff0920a0"
+                android:layout_weight="0.5"
+                android:paddingTop="10dp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView"
+                android:layout_alignParentStart="true"
+                android:id="@+id/linearLayout"
+                android:weightSum="2"
+                android:layout_marginTop="4dp"
+                android:divider="#d0000066"
+                android:dividerPadding="2dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ernie Davis"
+                    android:id="@+id/ernie"
+                    android:layout_alignParentStart="true"
+                    android:layout_weight=".95"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/button_pressable"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Brockway"
+                    android:id="@+id/brockway"
+                    android:layout_alignEnd="@+id/imageView2"
+                    android:layout_weight=".95"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/button_pressable"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearlayout2"
+                android:weightSum="3"
+                android:layout_marginTop="4dp"
+                android:layout_below="@+id/linearLayout"
+                android:layout_alignParentStart="true">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Goldstein"
+                    android:id="@+id/goldstein"
+                    android:layout_weight="1.45"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/button_pressable"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Graham"
+                    android:id="@+id/graham"
+                    android:layout_alignParentEnd="true"
+                    android:layout_weight="1.45"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/button_pressable"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:layout_marginTop="4dp"
+                android:id="@+id/linearlayout3"
+                android:layout_below="@+id/linearlayout2"
+                android:layout_alignParentStart="true">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sadler"
+                    android:id="@+id/sadler"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignEnd="@+id/goldstein"
+                    android:layout_weight="1.45"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/button_pressable"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shaw"
+                    android:id="@+id/shaw"
+                    android:layout_alignBottom="@+id/sadler"
+                    android:layout_alignStart="@+id/graham"
+                    android:layout_weight="1.45"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/button_pressable"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="250dp"
+            android:id="@+id/imageView2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/sadler"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            /> -->

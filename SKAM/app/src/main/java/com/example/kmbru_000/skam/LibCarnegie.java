@@ -18,6 +18,11 @@ import android.widget.ImageView;
 
 
 /**
+ * Created by kmbru_000 on 3/11/2015
+ *
+ * This fragment is called from ChooseLibFragment.
+ * It displays the contents of the info about carnegie library.
+ *
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link LibCarnegie.OnFragmentInteractionListener} interface

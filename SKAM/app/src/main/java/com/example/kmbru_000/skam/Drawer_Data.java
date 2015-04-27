@@ -2,6 +2,10 @@ package com.example.kmbru_000.skam;
 
 /**
  * Created by kmbru_000 on 3/21/2015.
+ *
+ * Drawer_Data contains a list/hashmap of the items in the navigation drawer.
+ * Each hashmap item includes the type of formatting, and the specified text.
+ *
  */
 
 import java.util.ArrayList;
@@ -46,6 +50,10 @@ public class Drawer_Data {
         item.put("type",TYPE1); item.put("icon", R.drawable.fork); item.put("title", "Dining Halls");
         drawerList.add(item);
 
+    /*    item = new HashMap();
+        item.put("type",TYPE1); item.put("icon", R.drawable.flower); item.put("title", "Cafes ListView");
+        drawerList.add(item);
+*/
         item = new HashMap();
         item.put("type",TYPE1); item.put("icon", R.drawable.flower); item.put("title", "Cafes");
         drawerList.add(item);
@@ -60,6 +68,10 @@ public class Drawer_Data {
 
         item = new HashMap();
         item.put("type",TYPE3);  item.put("title", "Views of 'Cuse");
+        drawerList.add(item);
+
+        item = new HashMap();
+        item.put("type",TYPE3);  item.put("title", "Compass");
         drawerList.add(item);
 
         item = new HashMap();

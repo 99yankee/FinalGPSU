@@ -10,6 +10,11 @@ import android.view.ViewGroup;
 
 
 /**
+ * Created by kmbru_000 on 3/12/2015
+ *
+ * This fragment is called from ChooseLibFragment.
+ * It displays the contents of the info about the MLK Jr. library.
+ *
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link LibMlk.OnFragmentInteractionListener} interface

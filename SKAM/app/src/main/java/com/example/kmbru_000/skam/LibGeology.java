@@ -7,8 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
+/* Created by kmbru_000 on 3/11/2015
+ *
+ * This fragment is called from ChooseLibFragment.
+ * It displays the contents of the info about the geology library.
+*/
 public class LibGeology extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
 

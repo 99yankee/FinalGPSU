@@ -14,8 +14,14 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
-
+/**
+ * Created by kmbru_000 on 4/19/2015.
+ *
+ * This activity is called by the navigation bar.
+ * It contains a list of the fragments used in the MyPageAdapter
+ * and the animation to use when swiping between fragments.f
+ *
+ */
 public class ViewsofCuseActivity extends FragmentActivity {
 
     MyPageAdapter pageAdapter;
@@ -51,22 +57,15 @@ public class ViewsofCuseActivity extends FragmentActivity {
 
     //Adds animation when sliding between fragments
     private void customizeViewPager() {
-        //mViewPager.setOffscreenPageLimit(4);
 
         pager.setPageTransformer(false, new ViewPager.PageTransformer() {
             @Override
             public void transformPage(View page, float position) {
-                // Fading out
-                //final float normalizedposition = Math.abs(Math.abs(position) - 1);
-                //page.setAlpha(normalizedposition);
-
-                // Scaling effect
+                //scaling animation
                 final float normalizedposition = Math.abs(Math.abs(position) - 1);
                 page.setScaleX(normalizedposition / 2 + 0.5f);
                 page.setScaleY(normalizedposition / 2 + 0.5f);
 
-                // Rotation effect
-                //page.setRotationY(position * -30);
             }
         });
 

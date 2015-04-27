@@ -10,6 +10,11 @@ import android.view.ViewGroup;
 
 
 /**
+ * Created by kmbru_000 on 3/13/2015
+ *
+ * This fragment is called from ChooseLibFragment.
+ * It displays the contents of the info about Moon library.
+ *
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link LibMoon.OnFragmentInteractionListener} interface

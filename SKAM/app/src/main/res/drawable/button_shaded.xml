@@ -13,7 +13,7 @@
     </item>
     <item>
         <inset
-            android:drawable="@drawable/button_pressed"
-            android:insetBottom="3dp" />
+            android:drawable="@drawable/button_not_pressed"
+            android:insetBottom="3dp"/>
     </item>
 </layer-list>

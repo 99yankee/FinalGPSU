@@ -41,5 +41,8 @@
     <string name="title_activity_diretions">Diretions</string>
     <string name="title_activity_viewsof_cuse">ViewsofCuseActivity</string>
     <string name="title_activity_cafe">CafeActivity</string>
+    <string name="title_activity_cafe_r">CafeRActivity</string>
+    <string name="title_activity_compass">CompassActivity</string>
+    <string name="title_activity_compass2">Compass2Activity</string>
 
 </resources>

@@ -12,6 +12,11 @@ import android.widget.EditText;
 
 
 /**
+ * Created by kmbru_000 on 3/10/2015
+ *
+ * This fragment is called from ChooseLibFragment.
+ * It displays the contents of the info about the library of architecture.
+ *
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link LibArch.OnFragmentInteractionListener} interface

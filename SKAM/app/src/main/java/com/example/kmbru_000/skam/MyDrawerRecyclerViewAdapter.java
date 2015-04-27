@@ -18,6 +18,13 @@ import java.util.Map;
 
 /**
  * Created by kmbru_000 on 3/21/2015.
+ *
+ * This class contains the options and the format for the options in the navigation drawer.
+ * There are four different formats:
+ *      1. Text without a picture to the left
+ *      2. Text with a picture to the left
+ *      3. A picture that spans the whole line
+ *      4. The title of the navigation drawer
  */
 
 public class MyDrawerRecyclerViewAdapter extends RecyclerView.Adapter<MyDrawerRecyclerViewAdapter.ViewHolder> {

@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/compassbkg2"
+    android:weightSum="1">
+
+    <TextView android:id="@+id/azimuth"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"/>
+
+    <TextView android:id="@+id/pitch"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"/>
+
+    <TextView android:id="@+id/roll"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"/>
+
+    <com.example.kmbru_000.skam.Compass
+        android:id="@+id/mycompass"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_weight="0.29" />
+
+
+</LinearLayout>

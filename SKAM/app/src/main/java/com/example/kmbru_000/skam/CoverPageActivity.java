@@ -27,8 +27,13 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-//import android.support.v7.widget.LinearLayoutManager;
-//import android.support.v7.widget.RecyclerView;
+import java.util.HashMap;
+
+/*The CoverPageActivity contains links to every other fragment and activity in the app.
+ * It implements MyDrawerRecyclerViewAdapter for the navigational drawer
+ * and Toolbar so that we can have a custom toolbar
+ *
+ */
 
 public class CoverPageActivity extends ActionBarActivity
         implements CoverPageFragment.OnButtonSelectedListener, ChooseLibFragment.OnButtonSelectedListener,
@@ -40,7 +45,7 @@ public class CoverPageActivity extends ActionBarActivity
         dining_ernie.OnFragmentInteractionListener, dining_goldstein.OnFragmentInteractionListener,
         dining_graham.OnFragmentInteractionListener, dining_sadler.OnFragmentInteractionListener,
         dining_shaw.OnFragmentInteractionListener,
-        PlaceholderFragment.OnButtonSelectedListener
+        CafeRFragment.OnRecyclerViewItemSelectedListener
         {
 
     //Implement variables for navigation bar and toolbar
@@ -113,45 +118,49 @@ public class CoverPageActivity extends ActionBarActivity
     private void selectItem(int position) {
         Intent intent;
         switch (position) {
-            case 0://Home
+            case 0://Home - new fragment
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new CoverPageFragment())
                         .addToBackStack("Home")
                         .commit();
                 break;
-            case 1: // Libraries
+            case 1: // Libraries - new fragment
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new ChooseLibFragment())
                         .addToBackStack("Libraries")
                         .commit();
                 break;
-            case 2: //Dining Halls
+            case 2: //Dining Halls - new fragment
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new ChooseDiningHallFragment())
                         .addToBackStack("Dining")
                         .commit();
                 break;
-            case 3: // Cafes
+            case 3: // Cafes - new fragment
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new PlaceholderFragment())
-                        .addToBackStack("Cafe")
-                        .commitAllowingStateLoss();
-               /* intent = new Intent(this, CafeActivity.class);
+                        .replace(R.id.container, new CafeRFragment())
+                                .addToBackStack("CafeRecycler")
+                                .commitAllowingStateLoss();
+               /* intent = new Intent(this, CafeRActivity.class);
                 startActivity(intent);*/
                 break;
             case 4:  // Border Line
                 break;
-            case 5: // Pictures of SU
+            case 5: // Pictures of SU -new activity
                 intent = new Intent(this, ViewsofCuseActivity.class);
                 startActivity(intent);
                 break;
-            case 6: // Exit
+            case 6:
+                intent = new Intent(this,Compass2Activity.class);
+                startActivity(intent);
+                break;
+            case 7: // Exit
                 System.exit(1);
                 break;
 
-            default: //go to home page
+            default: //go to home page - new
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new ChooseLibFragment())
+                        .replace(R.id.container, new CoverPageFragment())
                         .commit();
                 break;
         }
@@ -215,30 +224,30 @@ public class CoverPageActivity extends ActionBarActivity
         Intent intent;
 
         switch (id) {
-            case R.id.mapbutton:
+            case R.id.mapbutton: //Maps page - new activity
                 intent = new Intent(this, MapsActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.busbutton:
+            case R.id.busbutton: //Bus page - new activity
                 intent = new Intent(this, BusActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.weatherbutton:
+            case R.id.weatherbutton: //Weather page - new activity
                 intent = new Intent(this, WeatherActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.settingsbutton:
+            case R.id.settingsbutton: //Directions page - new activity
                 intent = new Intent(this, Directions.class);
                 startActivity(intent);
                 break;
 
+            //Buttons on ChooseLibFragment Page call a new fragment
             case R.id.bird:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new LibBird())
                         .addToBackStack("Bird Library")
                         .commit();
                 break;
-
             case R.id.carnegie:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new LibCarnegie())
@@ -276,53 +285,49 @@ public class CoverPageActivity extends ActionBarActivity
                         .commit();
                 break;
 
+            //Buttons on ChooseDiningHallFragment page call a new fragment
             case R.id.brockway:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new dining_brockway())
                         .addToBackStack("Brockway Dining Hall")
                         .commit();
                 break;
-
             case R.id.ernie:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new dining_ernie())
                         .addToBackStack("Ernie Davis Dining Hall")
                         .commit();
                 break;
-
             case R.id.goldstein:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new dining_goldstein())
                         .addToBackStack("Goldstein Student Center")
                         .commit();
                 break;
-
             case R.id.graham:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new dining_graham())
                         .addToBackStack("Graham Dining Hall")
                         .commit();
                 break;
-
             case R.id.sadler:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new dining_sadler())
                         .addToBackStack("Sadler Dining Hall")
                         .commit();
                 break;
-
             case R.id.shaw:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new dining_shaw())
                         .addToBackStack("Shaw Dining Hall")
                         .commit();
                 break;
-
             default:
                 break;
         }
     }
 
+    //Add new pages to the BackStack so user can go to the previous page
     @Override
     public void onBackPressed(){
         if(getFragmentManager().getBackStackEntryCount()!=0){
@@ -339,42 +344,7 @@ public class CoverPageActivity extends ActionBarActivity
     }
 
 
-/*
-    @Override
-    public void onFragmentInteraction(Uri uri) { ///////////////////////////////////////////////////////////
-
-    } */
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-/*    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-        private static final String ARG_OPTION = "section_number";
-
-        public static PlaceholderFragment newInstance(int sectionNumber)
-        {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_OPTION, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-
-            View rootView = inflater.inflate(R.layout.fragment_cover_page, container, false);
-
-            return rootView;
-        }
-    }
-*/
+    //Create methods for "Go Here" buttons on library & dining hall pages
     public void directArch (View view){
         Intent intent = new Intent(this, DirectionMaps.class);
         String starting = "LifeSciencesComplexSyracuse";
@@ -504,4 +474,9 @@ public class CoverPageActivity extends ActionBarActivity
         intent.putExtra(Directions.DESTINATION, destination);
         startActivity(intent);
     }
-}
+
+            @Override
+            public void onItemSelected(int position, HashMap<String, ?> movie) {
+
+            }
+        }

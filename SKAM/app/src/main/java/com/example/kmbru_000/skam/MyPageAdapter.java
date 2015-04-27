@@ -9,6 +9,9 @@ import java.util.Locale;
 
 /**
  * Created by kmbru_000 on 4/20/2015.
+ *
+ * MyPageAdapter helps the ViewsofCuseActivity display the different fragments.
+ *
  */
 public class MyPageAdapter extends FragmentPagerAdapter {
 

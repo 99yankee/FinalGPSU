@@ -17,6 +17,14 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+ /* Created by kmbru_000 on 2/08/2015
+  *
+  * This activity is called from CoverPageActivity.
+  * It displays a map using Google Maps API.
+  * The information about the API key is located in 'values/strings.xml' as google_maps_key.
+  *
+  */
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback{
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.

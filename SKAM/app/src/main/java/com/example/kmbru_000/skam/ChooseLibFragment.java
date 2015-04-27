@@ -10,6 +10,11 @@ import android.widget.Button;
 
 
 /**
+ * Created by kmbru_000 on 4/07/2015.
+ *
+ * This class is a fragment within the CoverPageActivity and can be accessed from the navigation drawer.
+ * It contains links to all the different libraries that it has buttons for.
+ *
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link com.example.kmbru_000.skam.ChooseLibFragment.OnButtonSelectedListener} interface
@@ -40,6 +45,7 @@ public class ChooseLibFragment extends Fragment implements View.OnClickListener 
 
     }
 
+    //Each library button has an onclicklistener so it can change to a different fragment when pressed
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -70,6 +76,9 @@ public class ChooseLibFragment extends Fragment implements View.OnClickListener 
         return rootView;
     }
 
+
+    //The CoverPageActivity must implement the onbuttonselectedlistener for this
+    //fragment so it knows when to change the fragment.
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);

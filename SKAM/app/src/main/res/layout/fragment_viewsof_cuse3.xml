@@ -10,6 +10,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView5"
         android:layout_gravity="center"
-        android:src="@drawable/viewadams"/>
+        android:src="@drawable/viewadams"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/backgrnd"
+        android:layout_gravity="center|top" />
 
 </FrameLayout>

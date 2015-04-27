@@ -6,13 +6,16 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by kmbru_000 on 4/10/2015.
+ * Created by kmbru_000 on 4/14/2015.
+ *
+ * This class creates the hashmap containing the information about each cafe.
+ * It references brand new updated pictures for each cafe.
+ *
  */
 public class CafeData {
 
 
     List<Map<String, ?>> cafesList;
-
 
     public List<Map<String, ?>> getCafesList() {
         return cafesList;
@@ -29,11 +32,6 @@ public class CafeData {
     }
 
     public CafeData() {
-        //name
-        //String[] hours;
-        //String building;
-        //String address;
-        //String phone;
 
         String building;
         String address;
@@ -47,6 +45,14 @@ public class CafeData {
         2 Brockway Food Court
         3 Eggers Cafe
         4 Food.com
+        5 Freshens
+        6 iCafe
+        7 Junction Snack Bar
+        8 Neoporent Cafe
+        9 Olsten Cafe
+        10 Pages
+        11 Slocum Cafe
+        12 The Warehouse Cafe
          */
         phone = "(315)443-4600";
         address = "";
