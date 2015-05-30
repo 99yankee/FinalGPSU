@@ -32,11 +32,14 @@ public class MyDrawerRecyclerViewAdapter extends RecyclerView.Adapter<MyDrawerRe
     private final List<Map<String,?>> mDataSet;
     OnItemClickListener mItemClickListener;
     private int mCurrentPosition;
+
+    //when calling this adapter, give it the parameters of the context and the list
     public MyDrawerRecyclerViewAdapter(Context mycontext, List<Map<String, ?>> myDataSet) {
         mcontext = mycontext;
         mDataSet = myDataSet;
-
     }
+
+    //viewholder makes it possible for the user view the drawer correctly
     public class ViewHolder extends RecyclerView.ViewHolder{
         public ImageView vIcon;
         public TextView vTitle;
@@ -65,6 +68,7 @@ public class MyDrawerRecyclerViewAdapter extends RecyclerView.Adapter<MyDrawerRe
 
         }
 
+        //when adding different formatted data to the list...
         public void bindData(Map<String, ?> item, int position){
             if (position == mCurrentPosition)
                 vView.setBackgroundColor(Color.LTGRAY);

@@ -22,16 +22,19 @@ public class MyPageAdapter extends FragmentPagerAdapter {
         this.fragments = fragments;
     }
 
+    //gets the fragment that it should swipe to
     @Override
     public Fragment getItem(int position) {
         return this.fragments.get(position);
     }
 
+    //returns the number of fragments
     @Override
     public int getCount() {
         return this.fragments.size();
     }
 
+    //gives each fragment a title
     @Override
     public CharSequence getPageTitle(int position) {
         Locale l = Locale.getDefault();

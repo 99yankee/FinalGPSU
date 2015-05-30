@@ -47,6 +47,7 @@ public class Compass2Activity extends Activity
 
         myCompass = (Compass)findViewById(R.id.mycompass);
 
+        //use sensors to continuously update the pitch, roll, azimuth, and direction
         sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         sensorAccelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorMagneticField = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
@@ -60,6 +61,7 @@ public class Compass2Activity extends Activity
     }
 
 
+    //makes the fragment begin operating with the user
     @Override
     protected void onResume() {
 
@@ -73,6 +75,7 @@ public class Compass2Activity extends Activity
         super.onResume();
     }
 
+    //onPause called when the fragment is no longer interacting with the user
     @Override
     protected void onPause() {
 
@@ -89,6 +92,7 @@ public class Compass2Activity extends Activity
 
     }
 
+    //when the fragment gets data from another phone sensor..
     @Override
     public void onSensorChanged(SensorEvent event) {
         // TODO Auto-generated method stub
@@ -128,6 +132,7 @@ public class Compass2Activity extends Activity
 
     }
 
+    //starts a different activity (coverpageactivity)
     @Override
     public void onClick(View v) {
         Intent intent;

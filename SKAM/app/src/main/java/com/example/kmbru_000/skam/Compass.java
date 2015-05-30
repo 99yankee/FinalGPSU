@@ -174,6 +174,7 @@ public class Compass extends View {
     }
 
 
+    //Update page layout when the orientation changes
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         regenerateBackground();
@@ -189,13 +190,11 @@ public class Compass extends View {
         float scale = (float) getWidth();
         backgroundCanvas.scale(scale, scale);
 
-        //drawRim(backgroundCanvas);
-        //drawFace(backgroundCanvas);
         drawScale(backgroundCanvas);
-
 
     }
 
+    //Draw shapes on canvas
     @Override
     protected void onDraw(Canvas canvas) {
 
@@ -261,6 +260,7 @@ public class Compass extends View {
         invalidate();
     }
 
+    //Draw details of compass
     private void drawScale(Canvas canvas) {
         canvas.drawOval(scaleRect, scalePaint);
 

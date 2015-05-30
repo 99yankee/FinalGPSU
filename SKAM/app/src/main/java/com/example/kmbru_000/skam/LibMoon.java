@@ -56,6 +56,7 @@ public class LibMoon extends Fragment {
         // Required empty public constructor
     }
 
+    //called for initial creation of the fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +66,7 @@ public class LibMoon extends Fragment {
         }
     }
 
+    //creates and returns the view hierarchy  associated with the fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -79,6 +81,7 @@ public class LibMoon extends Fragment {
         }
     }
 
+    //called when the fragment is associated with the activity (coverpageactivity)
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -90,6 +93,7 @@ public class LibMoon extends Fragment {
         }
     }
 
+    //called right before the fragment is no longer associated with coverpageactivity
     @Override
     public void onDetach() {
         super.onDetach();

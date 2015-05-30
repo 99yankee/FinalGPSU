@@ -27,6 +27,7 @@ public class ViewsofCuseActivity extends FragmentActivity {
     MyPageAdapter pageAdapter;
     ViewPager pager;
 
+    //called for initial creation of the fragment
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

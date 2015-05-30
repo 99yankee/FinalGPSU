@@ -34,6 +34,7 @@ public class CoverPageFragment extends Fragment {
         // Required empty public constructor
     }
 
+    //initial creation of the fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +77,7 @@ public class CoverPageFragment extends Fragment {
         }
     }
 
+    //called right before the fragment is no longer associated with coverpageactivity
     @Override
     public void onDetach() {
         super.onDetach();

@@ -28,12 +28,14 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         mCafeList = myCafeList;
     }
 
+    //listviewholder holds the list so the user can view it by scrolling up and down
     public class ListViewHolder extends RecyclerView.ViewHolder{
         public TextView vTitle;
         public ImageView vIcon;
         public TextView vDescription;
         public ImageView vMenu;
 
+        //associate variables with the positions in each row that need to be filled
         public ListViewHolder(View v){
             super(v);
             vTitle = (TextView)v.findViewById(R.id.name);
@@ -41,6 +43,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             vDescription = (TextView)v.findViewById(R.id.building);
             vMenu = (ImageView)v.findViewById(R.id.menu_list);
 
+            //create a corresponding listener for each menuoverflowmenu button
             vMenu.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -51,6 +54,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             });
         }
 
+        //access the list to put the actual value in each variable in the row
         public void bindCafeData(Map<String, ?> cafe){
             vTitle.setText((String) cafe.get("name"));
             vDescription.setText((String) cafe.get("building"));

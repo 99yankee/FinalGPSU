@@ -45,6 +45,7 @@ public class ViewsofCuseFragment extends Fragment {
         return frag;
     }
 
+    //creates and returns the view hierarchy  associated with the fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -85,6 +86,7 @@ public class ViewsofCuseFragment extends Fragment {
         int w = v.getWidth();
 
 
+        //add decorations to each page
         Bitmap bitmap = Bitmap.createBitmap(1100, 2000, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
 

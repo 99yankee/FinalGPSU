@@ -24,9 +24,7 @@ import android.widget.Button;
  */
 public class ChooseLibFragment extends Fragment implements View.OnClickListener {
 
-    //private OnFragmentInteractionListener mListener;
     private OnButtonSelectedListener mListener;
-
 
     public static ChooseLibFragment newInstance(String param1, String param2) {
         ChooseLibFragment fragment = new ChooseLibFragment();

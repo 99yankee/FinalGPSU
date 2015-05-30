@@ -58,23 +58,16 @@ public class LibCarnegie extends Fragment {
         // Required empty public constructor
     }
 
+    //called for initial creation of the fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-       // TouchImageView img = (TouchImageView) findViewById(R.id.img);
-        //setContentView(R.layout.fragment_lib_carnegie);
-      /*  final View thumb1View = (ImageView) (R.id.carnegie);
-        thumb1View.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                zoomImageFromThumb(thumb1View, R.drawable.carnegie);
-            }
-        }); */
     }
 
 
 
+    //creates and returns the view hierarchy  associated with the fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -89,6 +82,7 @@ public class LibCarnegie extends Fragment {
         }
     }
 
+    //called when the fragment is associated with the activity (coverpageactivity)
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -100,6 +94,7 @@ public class LibCarnegie extends Fragment {
         }
     }
 
+    //called right before the fragment is no longer associated with coverpageactivity
     @Override
     public void onDetach() {
         super.onDetach();

@@ -14,23 +14,26 @@ import java.util.Map;
  */
 public class CafeData {
 
-
+    //Map holds cafe info
     List<Map<String, ?>> cafesList;
 
     public List<Map<String, ?>> getCafesList() {
         return cafesList;
     }
 
+    //Returns number of cafes
     public int getSize() {
         return cafesList.size();
     }
 
+    //Allows access to specific items within hashmap of cafes
     public HashMap getItem(int i) {
         if (i >= 0 && i < cafesList.size()) {
             return (HashMap) cafesList.get(i);
         } else return null;
     }
 
+    //Creates info about each cafe & adds it to list
     public CafeData() {
 
         String building;
@@ -164,7 +167,7 @@ public class CafeData {
 
     }
 
-
+    //Adds info about each cafe to hashmap
     private HashMap createCafe(String name, int image, String building, String phone,
                                String address, String[] hours) {
         HashMap cafe = new HashMap();

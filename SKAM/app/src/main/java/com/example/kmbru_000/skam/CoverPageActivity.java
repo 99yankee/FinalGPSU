@@ -158,7 +158,7 @@ public class CoverPageActivity extends ActionBarActivity
                 System.exit(1);
                 break;
 
-            default: //go to home page - new
+            default: //go to home page - new activity
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new CoverPageFragment())
                         .commit();

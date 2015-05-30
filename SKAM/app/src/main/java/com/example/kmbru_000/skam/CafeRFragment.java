@@ -47,6 +47,7 @@ import java.util.Map;
  */
 public class CafeRFragment extends Fragment implements TextView.OnEditorActionListener {
 
+    //Uses recyclerview to display cafe data in a list
     private RecyclerView mRecyclerView;
     private MyRecyclerViewAdapter mRecyclerViewAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -69,6 +70,7 @@ public class CafeRFragment extends Fragment implements TextView.OnEditorActionLi
         // Required empty public constructor
     }
 
+    //This fragment will load the cafe data as soon as it opens
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +78,7 @@ public class CafeRFragment extends Fragment implements TextView.OnEditorActionLi
         cafeData = new CafeData();
     }
 
+    //onCreateView tells the activity what this fragment will display upon opening
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -121,6 +124,8 @@ public class CafeRFragment extends Fragment implements TextView.OnEditorActionLi
         mRecyclerView.setAdapter(mRecyclerViewAdapter);
         return rootView;
     }
+
+    //When clicking on the overflow button, this decides what to display
     private void hoursMenuItem(int position) {
         String title = "";
         String[] message;
@@ -194,12 +199,8 @@ public class CafeRFragment extends Fragment implements TextView.OnEditorActionLi
                 }).show();
     }
 
-    /*  public void onButtonPressed(Uri uri) {
-          if (mListener != null) {
-              mListener.onOverFlowMenuClick(uri);
-          }
-      }
-  */
+
+    //attach this fragment to the activity so interactions here will be known
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -211,6 +212,7 @@ public class CafeRFragment extends Fragment implements TextView.OnEditorActionLi
         }
     }
 
+    //Cancel the listener from this class when exiting
     @Override
     public void onDetach() {
         super.onDetach();
@@ -227,10 +229,6 @@ public class CafeRFragment extends Fragment implements TextView.OnEditorActionLi
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnRecyclerViewItemSelectedListener {
         // TODO: Update argument type and name
@@ -270,6 +268,8 @@ public class CafeRFragment extends Fragment implements TextView.OnEditorActionLi
             }
             return false;
         }
+
+        //When clicking on the overflow button, this decides what to display
         private void hoursMenuItem(int position) {
             String title = "";
             String[] message;
@@ -355,6 +355,8 @@ public class CafeRFragment extends Fragment implements TextView.OnEditorActionLi
         }
 
     }
+
+    //Creates a listener for each list item
     public interface OnListItemSelectedListener{
         public void onListItemSelected (int position, HashMap<String, ?> movie);
     }
